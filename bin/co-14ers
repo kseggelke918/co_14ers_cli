@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby 
+
+require './lib/co_14ers'
+
+
+Co14ers::CLI.new.call # To start program
