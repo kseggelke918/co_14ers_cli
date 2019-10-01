@@ -6,6 +6,4 @@ gemspec
 
 
 
-ruby
-gem 'co_14ers_cli'
 
