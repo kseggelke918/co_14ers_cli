@@ -1,24 +1,23 @@
 class Co14ers::CLI
+  #make each mountain and range an object so we can do things like front_range.peaks and Grays.elevation 
 
   def call 
+    puts "For a list of Colorado 14ers, please type 'list'. To exit, please type 'exit'"
     ranges
     
   end 
 
   def ranges
-    puts "For a list of Colorado 14ers, please type 'list'. To exit, please type 'exit'"
     user_input = gets.chomp.downcase 
-    
-      if user_input == "list"
-        list
-        peak_names
-        mountain_information
-      elsif user_input == "exit"
-        puts "Thank you, come again!"
-      else 
-        puts "That was an invalid selection, please type 'list' for a list of Colorado 14ers or 'exit' to exit the program."
-        user_input = gets.chomp.downcase 
-        # this needs to go back to the beginning of the if statement without the issues arrising from an until and while loop
+    if user_input == "list"
+      list
+      peak_names
+      mountain_information
+    elsif user_input == "exit"
+      puts "Thank you, come again!"
+    else 
+      puts "That was an invalid selection, please type 'list' for a list of Colorado 14ers or 'exit' to exit the program."
+      ranges 
       end 
   end 
   
