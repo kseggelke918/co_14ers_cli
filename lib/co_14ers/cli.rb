@@ -7,15 +7,19 @@ class Co14ers::CLI
 
   def ranges
     puts "For a list of Colorado 14ers, please type 'list'. To exit, please type 'exit'"
-    user_input = gets.chomp 
+    user_input = gets.chomp.downcase 
     
-    until user_input == "exit"
       if user_input == "list"
         list
+        peak_names
+        mountain_information
+      elsif user_input == "exit"
+        puts "Thank you, come again!"
+      else 
+        puts "That was an invalid selection, please type 'list' for a list of Colorado 14ers or 'exit' to exit the program."
+        user_input = gets.chomp.downcase 
+        # this needs to go back to the beginning of the if statement without the issues arrising from an until and while loop
       end 
-      peak_names
-    end 
-
   end 
   
   def list 
@@ -30,23 +34,23 @@ class Co14ers::CLI
   
   def peak_names
     puts "For a list of peaks in a range, enter the corresponding number:"
-    range_input = gets.chomp 
-    if range_input == "1"
-      puts "Grays Peak"
-      puts "Torreys Peak"
-      puts "Mt. Evans"
-      puts "Longs Peak"
-      puts "Piles Peak"
-      puts "Mt. Bierdstadt"
-    elsif range_input == "2"
-      puts "Quandary Peak"  
-    elsif range_input == "3"
-      puts "Mt. Lincoln"
-      puts "Mt. Cameron"
-      puts "Mt. Bross"
-      puts "Mt. Democrat"
-      puts "Mt. Sherman"
-    elsif range_input == "4"
+    @range_input = gets.chomp 
+    if @range_input == "1"
+      puts "1. Grays Peak"
+      puts "2. Torreys Peak"
+      puts "3. Mt. Evans"
+      puts "4. Longs Peak"
+      puts "5. Piles Peak"
+      puts "6. Mt. Bierdstadt"
+    elsif @range_input == "2"
+      puts "1. Quandary Peak"  
+    elsif @range_input == "3"
+      puts "1. Mt. Lincoln"
+      puts "2. Mt. Cameron"
+      puts "3. Mt. Bross"
+      puts "4. Mt. Democrat"
+      puts "5. Mt. Sherman"
+    elsif @range_input == "4"
       puts "Mt. Elbert"
       puts "Mt. Massive"
       puts "Mt. Harvard" 
@@ -62,7 +66,7 @@ class Co14ers::CLI
       puts "Missouri Mountain"
       puts "Mt. of the Holy Cross"
       puts "Huron Peak"
-    elsif range_input == "5"
+    elsif @range_input == "5"
       puts "Castle Peak"
       puts "Maroon Peak"
       puts "Capital Peak"
@@ -70,7 +74,7 @@ class Co14ers::CLI
       puts "Conundrum Peak"
       puts "Pyramid Peak"
       puts "North Maroon Peak"
-    elsif range_input == "6"
+    elsif @range_input == "6"
       puts "Uncompahgre Peak"
       puts "Mt. Wilson"
       puts "El Diente Peak"
@@ -85,7 +89,7 @@ class Co14ers::CLI
       puts "Wetterhorn Peak"
       puts "San Luis Peak"
       puts "Sunshine Peak"
-    elsif range_input == "7"
+    elsif @range_input == "7"
       puts "Blana Peak"
       puts "Crestone Peak"
       puts "Crestone Needle"
@@ -100,6 +104,57 @@ class Co14ers::CLI
       puts "Please enter a valid number."
     end 
   end 
+ 
+ def mountain_information
+   puts "For information on a specific mountain, please enter the corresponding number:"
+   mountain_info_input = gets.chomp.downcase 
+   if @range_input == "1"
+     if mountain_info_input == "1" #Grays peak 
+        puts "elevation @ summit = 14,270"
+        puts "elevation gain: 3000ft"
+        puts "most recent conditions: yada yada yada"
+        puts "name history: history of peak name"
+        puts "difficulty (standard route): class 1"
+        puts "trip length: 8 miles"
+      elsif mountain_info_input == "2" #Torreys
+        puts "elevation at summit: 14,267"
+        puts "elevation gain: 3000ft"
+        puts "most recent conditions: torrys conditions"
+        puts "name history: history of torreys peak name"
+        puts "difficulty: class 2"
+        puts "trip length: 8 miles"
+      end 
+    elsif @range_input == "2"
+      if mountain_info_input == "1"
+        puts "elevation @ summit: Quandary"
+        puts "elevation gain: Quandary"
+        puts "most recent conditions: Quandary"
+        puts "name history: Quandary"
+        puts "difficulty: Quandary"
+        puts "trip length: Quandary"
+      end 
+    elsif @range_input == "3"
+      if mountain_info_input == "1"
+        puts "elevation @ summit: Mt.Lincoln"
+        puts "elevation gain: Mt.Lincoln"
+        puts "most recent conditions: Mt.Lincoln"
+        puts "name history: Mt.Lincoln"
+        puts "difficulty: Mt.Lincoln"
+        puts "trip length: Mt.Lincoln"
+      elsif mountain_info_input == "2"
+        puts "elevation @ summit: Mt.Cameron"
+        puts "elevation gain: Mt.Cameron"
+        puts "most recent conditions: Mt.Cameron"
+        puts "name history: Mt.Cameron"
+        puts "difficulty: Mt.Cameron"
+        puts "trip length: Mt.Cameron"
+      end 
+    else 
+      puts "That was an invalid entry"
+     
+   end 
+ end 
+ 
   
 end 
  	
