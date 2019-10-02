@@ -6,16 +6,15 @@ class Co14ers::CLI
   end 
 
   def ranges
-    puts "For a list of Colorado 14ers, please type 'list'"
+    puts "For a list of Colorado 14ers, please type 'list'. To exit, please type 'exit'"
     user_input = gets.chomp 
     
-    if user_input == "list"
-      list
-    # else 
-    #   puts "For a list of Colorado 14ers, please type 'list'"
-    #   user_input = gets.chomp 
+    until user_input == "exit"
+      if user_input == "list"
+        list
+      end 
+      peak_names
     end 
-    peak_names
 
   end 
   
@@ -41,223 +40,69 @@ class Co14ers::CLI
       puts "Mt. Bierdstadt"
     elsif range_input == "2"
       puts "Quandary Peak"  
+    elsif range_input == "3"
+      puts "Mt. Lincoln"
+      puts "Mt. Cameron"
+      puts "Mt. Bross"
+      puts "Mt. Democrat"
+      puts "Mt. Sherman"
+    elsif range_input == "4"
+      puts "Mt. Elbert"
+      puts "Mt. Massive"
+      puts "Mt. Harvard" 
+      puts "La Plata Peak"
+      puts "Mt. Antero"
+      puts "Mt. Shavano"
+      puts "Mt. Princeton"
+      puts "Mt. Belford"
+      puts "Mt. Yale"
+      puts "Tabeguache Peak"
+      puts "Mt. Oxford"
+      puts "Mt. Columbia"
+      puts "Missouri Mountain"
+      puts "Mt. of the Holy Cross"
+      puts "Huron Peak"
+    elsif range_input == "5"
+      puts "Castle Peak"
+      puts "Maroon Peak"
+      puts "Capital Peak"
+      puts "Snowmass Mountain"
+      puts "Conundrum Peak"
+      puts "Pyramid Peak"
+      puts "North Maroon Peak"
+    elsif range_input == "6"
+      puts "Uncompahgre Peak"
+      puts "Mt. Wilson"
+      puts "El Diente Peak"
+      puts "Mt. Sneffels"
+      puts "Windom Peak"
+      puts "Mt. Eolus"
+      puts "Sunlight Peak"
+      puts "Handies Peak"
+      puts "North Eolus"
+      puts "Redcloud Peak"
+      puts "Wilson Peak"
+      puts "Wetterhorn Peak"
+      puts "San Luis Peak"
+      puts "Sunshine Peak"
+    elsif range_input == "7"
+      puts "Blana Peak"
+      puts "Crestone Peak"
+      puts "Crestone Needle"
+      puts "Kit Carson Peak"
+      puts "Challenger Point"
+      puts "Humboldt Peak"
+      puts "Culebra Peak"
+      puts "Mt. Lindsey"
+      puts "Ellingwood Point"
+      puts "Little Bear Peak"
     else 
       puts "Please enter a valid number."
     end 
   end 
   
 end 
-	
-
- 
-# Mosquito Range
  	
-# Mt. Lincoln
-# 14,286'	
- 
- 	
-# Mt. Cameron
-# 14,238'	
- 
- 	
-# Mt. Bross
-# 14,172'	
- 
- 	
-# Mt. Democrat
-# 14,148'	
- 
- 	
-# Mt. Sherman
-# 14,036'	
- 
-# Sawatch Range
- 	
-# Mt. Elbert
-# 14,433'	
- 
- 	
-# Mt. Massive
-# 14,421'	
- 
- 	
-# Mt. Harvard
-# 14,420'	
- 
- 	
-# La Plata Peak
-# 14,336'	
- 
- 	
-# Mt. Antero
-# 14,269'	
- 
- 	
-# Mt. Shavano
-# 14,229'	
- 
- 	
-# Mt. Princeton
-# 14,197'	
- 
- 	
-# Mt. Belford
-# 14,197'	
- 
- 	
-# Mt. Yale
-# 14,196'	
- 
- 	
-# Tabeguache Peak
-# 14,155'	
- 
- 	
-# Mt. Oxford
-# 14,153'	
- 
- 	
-# Mt. Columbia
-# 14,073'	
- 
- 	
-# Missouri Mountain
-# 14,067'	
- 
- 	
-# Mt. of the Holy Cross
-# 14,005'	
- 
- 	
-# Huron Peak
-# 14,003'	
- 
-# Elk Mountains
- 	
-# Castle Peak
-# 14,265'	
- 
- 	
-# Maroon Peak
-# 14,156'	
- 
- 	
-# Capitol Peak
-# 14,130'	
- 
- 	
-# Snowmass Mountain
-# 14,092'	
- 
- 	
-# Conundrum Peak
-# 14,060'	
- 
- 	
-# Pyramid Peak
-# 14,018'	
- 
- 	
-# North Maroon Peak
-# 14,014'	
- 
-# San Juan Mountains
- 	
-# Uncompahgre Peak
-# 14,309'	
- 
- 	
-# Mt. Wilson
-# 14,246'	
- 
- 	
-# El Diente Peak
-# 14,159'	
- 
- 	
-# Mt. Sneffels
-# 14,150'	
- 
- 	
-# Windom Peak
-# 14,087'	
- 
- 	
-# Mt. Eolus
-# 14,083'	
- 
- 	
-# Sunlight Peak
-# 14,059'	
- 
- 	
-# Handies Peak
-# 14,048'	
- 
- 	
-# North Eolus
-# 14,039'	
- 
- 	
-# Redcloud Peak
-# 14,034'	
- 
- 	
-# Wilson Peak
-# 14,017'	
- 
- 	
-# Wetterhorn Peak
-# 14,015'	
- 
- 	
-# San Luis Peak
-# 14,014'	
- 
- 	
-# Sunshine Peak
-# 14,001'	
- 
-# Sangre de Cristo Range
- 	
-# Blanca Peak
-# 14,345'	
- 
- 	
-# Crestone Peak
-# 14,294'	
- 
- 	
-# Crestone Needle
-# 14,197'	
- 
- 	
-# Kit Carson Peak
-# 14,165'	
- 
- 	
-# Challenger Point
-# 14,081'	
- 
- 	
-# Humboldt Peak
-# 14,064'	
- 
- 	
-# Culebra Peak
-# 14,047'	
- 
- 	
-# Mt. Lindsey
-# 14,042'	
- 
- 	
-# Ellingwood Point
-# 14,042'	
- 
- 	
-# Little Bear Peak
-# 14,037'
 
 
 
