@@ -1,5 +1,5 @@
 class Co14ers::CLI
-  #make each mountain and range an object so we can do things like front_range.peaks and Grays.elevation 
+  #make each mountain an object so we can do things like front_range.peaks and Grays.elevation 
 
   def call 
     puts "For a list of Colorado 14ers, please type 'list'. To exit, please type 'exit'"
