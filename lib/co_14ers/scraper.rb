@@ -20,12 +20,20 @@ class Co14ers::Scraper
       mountain_ranges << text 
        
     end 
-    binding.pry 
   end 
-end
+
 
   def self.scraper_from_main_page_peak_list(url)
     main_page = Nokogiri::HTML(open(url))
     peaks = []
+    
+    peak_names = main_page.css("table.data_box4 td a")
+    peak_names.each_with_index do |peak, index|
+      text = "#{index+1}. #{peak.text}"
+      peaks << text 
+       
+    end 
+    binding.pry
   end 
-  Co14ers::Scraper.scrape_from_main_page("https://www.14ers.com/")
+end 
+  Co14ers::Scraper.scraper_from_main_page_peak_list("https://www.14ers.com/")
