@@ -22,6 +22,7 @@ class Co14ers::CLI
   end 
   
   def list 
+    # @mountain_ranges = Co14ers::Mountain.mountain_ranges
     puts "1. Front Range"  
     puts "2. Tenmile Range"
     puts "3. Mosquito Range"
@@ -33,6 +34,8 @@ class Co14ers::CLI
   
   def peak_names
     puts "For a list of peaks in a range, enter the corresponding number:"
+    # @peaks = Co14ers::Mountain.peaks 
+
     @range_input = gets.chomp 
     if @range_input == "1"
       puts "1. Grays Peak"
