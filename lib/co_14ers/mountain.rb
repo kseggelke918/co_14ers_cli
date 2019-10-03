@@ -1,8 +1,12 @@
 class Co14ers::Mountain
-  attr_reader :name, :range, :elevation, :elevation_gain, :name_history, :difficulty, :trip_length
+  attr_accessor :name, :range, :elevation, :elevation_gain, :name_history, :difficulty, :trip_length
   
-  def peaks
-    
+  def initialize(name)
+    @name = name 
+  end 
+
+  def create_from_website(site)
+     @name = site 
   end 
   
   
