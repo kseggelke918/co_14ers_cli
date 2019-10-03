@@ -1,12 +1,39 @@
 class Co14ers::Mountain
   attr_accessor :name, :range, :elevation, :elevation_gain, :name_history, :difficulty, :trip_length
   
-  def initialize(name)
-    @name = name 
-  end 
+  # need list of peak objects that contain the attributes: peak.name, peak.range, peak.elevation, peak.elevation_gain, peak.name_history, peak.difficulty, peak.trip_length 
+  
+  
+  # def initialize(name)
+  #   @name = name 
+  #   save 
+  # end 
 
-  def create_from_website(site)
-     @name = site 
+  # def save 
+  #   @@all << self 
+  # end 
+
+  # def self.all 
+  #   @@all 
+  # end 
+
+
+  # def self.peaks
+  #   self.all.collect do |peak|
+  #   if peak.range == input 
+  #     peak 
+  #   end 
+      
+  # end 
+  
+  def self.ranges
+    puts "1. Front Range"  
+    puts "2. Tenmile Range"
+    puts "3. Mosquito Range"
+    puts "4. Sawatch Range"
+    puts "5. Elk Mountains"
+    puts "6. San Juan Mountains"
+    puts "7. Sangre de Cristo Range"  
   end 
   
   
