@@ -10,14 +10,22 @@ class Co14ers::Scraper
 # https://www.14ers.com/ - main page 
 
 
-  def self.scrape_from_main_page(url)
-    binding.pry
+  def self.scrape_from_main_page_headers(url)
     main_page = Nokogiri::HTML(open(url))
-    mountains = []
+    mountain_ranges = []
     
-    main_page.css("table.data_box4 tbody tr th tr td a") do |peak|
-      binding.pry 
+    range_headers = main_page.css("table.data_box4 th span") 
+    range_headers.each_with_index do |range, index|
+      text = "#{index+1}. #{range.text}"
+      mountain_ranges << text 
+       
     end 
+    binding.pry 
   end 
 end
+
+  def self.scraper_from_main_page_peak_list(url)
+    main_page = Nokogiri::HTML(open(url))
+    peaks = []
+  end 
   Co14ers::Scraper.scrape_from_main_page("https://www.14ers.com/")
