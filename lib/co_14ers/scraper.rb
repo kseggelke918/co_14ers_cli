@@ -12,7 +12,8 @@ class Co14ers::Scraper
   def self.scrape_main_page 
     url = get_main_page.css("table.data_box4 td a")  
     
-    url.collect do |site| 
+    url.collect do |site|
+
       site.attribute("href").value
     end 
     
@@ -22,9 +23,14 @@ class Co14ers::Scraper
     #binding.pry 
     scrape_main_page.each do |site|
       second_page = Nokogiri::HTML(open("https://www.14ers.com/" + site))
-      second_page.css("div.sidebar_content ul.sectionlistli")
+
+      url = second_page.css("div.sidebar_content ul.sectionlist li")[8]
+      url.each do |site|
+        binding.pry 
+        site.children.attribute("href").value
+      end 
       
-      binding.pry 
+
     end 
   end 
   
