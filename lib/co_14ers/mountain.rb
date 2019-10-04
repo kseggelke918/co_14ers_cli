@@ -27,73 +27,33 @@ class Co14ers::Mountain
     @@all 
   end 
 
-
   def self.find_range(input)
     if input == "1"
       puts "1. Grays Peak"
       puts "2. Torreys Peak"
       puts "3. Mt. Evans"
       puts "4. Longs Peak"
-      puts "5. Piles Peak"
-      puts "6. Mt. Bierdstadt"
     elsif input == "2"
       puts "1. Quandary Peak"  
     elsif input == "3"
       puts "1. Mt. Lincoln"
       puts "2. Mt. Cameron"
       puts "3. Mt. Bross"
-      puts "4. Mt. Democrat"
-      puts "5. Mt. Sherman"
     elsif input == "4"
       puts "Mt. Elbert"
       puts "Mt. Massive"
       puts "Mt. Harvard" 
-      puts "La Plata Peak"
-      puts "Mt. Antero"
-      puts "Mt. Shavano"
-      puts "Mt. Princeton"
-      puts "Mt. Belford"
-      puts "Mt. Yale"
-      puts "Tabeguache Peak"
-      puts "Mt. Oxford"
-      puts "Mt. Columbia"
-      puts "Missouri Mountain"
-      puts "Mt. of the Holy Cross"
-      puts "Huron Peak"
     elsif input == "5"
       puts "Castle Peak"
       puts "Maroon Peak"
-      puts "Capital Peak"
-      puts "Snowmass Mountain"
-      puts "Conundrum Peak"
-      puts "Pyramid Peak"
-      puts "North Maroon Peak"
     elsif input == "6"
       puts "Uncompahgre Peak"
       puts "Mt. Wilson"
       puts "El Diente Peak"
-      puts "Mt. Sneffels"
-      puts "Windom Peak"
-      puts "Mt. Eolus"
-      puts "Sunlight Peak"
-      puts "Handies Peak"
-      puts "North Eolus"
-      puts "Redcloud Peak"
-      puts "Wilson Peak"
-      puts "Wetterhorn Peak"
-      puts "San Luis Peak"
-      puts "Sunshine Peak"
     elsif input == "7"
       puts "Blana Peak"
       puts "Crestone Peak"
       puts "Crestone Needle"
-      puts "Kit Carson Peak"
-      puts "Challenger Point"
-      puts "Humboldt Peak"
-      puts "Culebra Peak"
-      puts "Mt. Lindsey"
-      puts "Ellingwood Point"
-      puts "Little Bear Peak"
     else 
       puts "Please enter a valid range."
     end 
@@ -128,8 +88,11 @@ class Co14ers::Mountain
   end 
   
   def self.ranges
-    # Co14ers::Scraper.scrape_from_main_page_headers
-    # scrape this informaiton from the main page of the website
+    # self.all.each_with_index do |peak, index|
+    #   while index <= self.all.length 
+    #     puts "#{index+1}. #{peak.range.capitalize}" 
+    #   end 
+    # end 
     puts "1. Front Range"  
     puts "2. Tenmile Range"
     puts "3. Mosquito Range"
