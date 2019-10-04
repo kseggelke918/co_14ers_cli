@@ -22,21 +22,21 @@ class Co14ers::Scraper
   end 
   
   def self.scrape_second_page
+    console_page_urls = []
     scrape_main_page.each do |site|
       second_page = Nokogiri::HTML(open(site))
       url = second_page.css("div.sidebar_content ul.sectionlist li")[8].children
-      url.collect do |console_site|
-        @@main_webpage + console_site.attribute("href").value
+      url.each do |console_site|
+        console_page_urls <<@@main_webpage + console_site.attribute("href").value
       end 
- 
     end 
+    console_page_urls
   end 
   
   def self.peak_attributes
  
     scrape_second_page.each do |site|
-      binding.pry 
-      console = Nokogiri::HTML(open(@@main_webpage + site))
+      console = Nokogiri::HTML(open(site))
       binding.pry 
       console.css()
       # range = 
