@@ -4,7 +4,7 @@ class Co14ers::Mountain
   # need list of peak objects that contain the attributes: peak.name, peak.range, peak.elevation, peak.elevation_gain, peak.name_history, peak.difficulty, peak.trip_length 
   @@all = []
   
-  def initialize(name =nil, range=nil, name_history=nil, elevation=nil, elevation_gain=nil, difficulty=nil, trip_length=nil)
+  def initialize(url, name=nil, range=nil, name_history=nil, elevation=nil, elevation_gain=nil, difficulty=nil, trip_length=nil)
     @name = name
     @range = range 
     @name_history = name_history
@@ -16,7 +16,7 @@ class Co14ers::Mountain
   end 
   
   def self.new_from_console
-    self.new(name, range, name_history, elevation, elevation_gain, difficulty, trip_length)
+    self.new(url)
   end 
 
   def save 
