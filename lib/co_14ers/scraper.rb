@@ -27,15 +27,11 @@ class Co14ers::Scraper
 
   def self.scrape_main_page_url
     main_page = self.scrape_main_page
-    binding.pry 
-    url = main_page.css("div.csspopup li a").attribute("href").text 
+    #binding.pry 
+    #url = main_page.css("div.csspopup li a").attribute("href") 
     
     
-    
-    
-    
-    
-    Co14ers::Moutain.new_from_console(url, name)
+    #Co14ers::Moutain.new_from_console(url, name)
     
     
     
