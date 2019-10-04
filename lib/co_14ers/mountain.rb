@@ -1,5 +1,5 @@
 class Co14ers::Mountain
-  attr_accessor :name, :range, :elevation, :elevation_gain, :name_history, :difficulty, :trip_length
+  attr_accessor :name, :range, :elevation, :elevation_gain, :name_history, :difficulty, :trip_length, :url
   
   # need list of peak objects that contain the attributes: peak.name, peak.range, peak.elevation, peak.elevation_gain, peak.name_history, peak.difficulty, peak.trip_length 
   @@all = []

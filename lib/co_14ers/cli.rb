@@ -31,6 +31,7 @@ class Co14ers::CLI
   end 
  
  def mountain_information
+   #call detailed scraper method 
    puts "For information on a specific mountain, please enter the name of the mountain:"
    mountain_info_input = gets.chomp.downcase 
    Co14ers::Mountain.mountain_info(mountain_info_input) 

@@ -10,18 +10,30 @@ class Co14ers::Scraper
   end 
 
   def self.scrape_main_page 
-    binding.pry 
-    url = get_main_page.css("a").attribute("href")  
+    url = get_main_page.css("table.data_box4 td a")  
+    
+    url.collect do |site| 
+      site.attribute("href").value
+    end 
+    
+  end 
+  
+  def self.scrape_second_page
+    #binding.pry 
+    scrape_main_page.each do |site|
+      second_page = Nokogiri::HTML(open("https://www.14ers.com/" + site))
+      second_page.css("div.sidebar_content ul.sectionlistli")
+      
+      binding.pry 
+    end 
   end 
   
   def self.make_peak_objects
  
- 
   end 
 
-  
 end 
- Co14ers::Scraper.scrape_main_page
+ Co14ers::Scraper.scrape_second_page
 
 #   def self.scrape_from_main_page_headers
 #     main_page = self.scrape_main_page 
