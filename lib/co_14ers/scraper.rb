@@ -4,68 +4,52 @@ require "bundler/setup"
 require "co_14ers"
 
 class Co14ers::Scraper 
-
+  
+  @@main_webpage = "https://www.14ers.com/"
+  
   def self.get_main_page
-    Nokogiri::HTML(open("https://www.14ers.com/")) 
+    Nokogiri::HTML(open(@@main_webpage)) 
   end 
 
   def self.scrape_main_page 
     url = get_main_page.css("table.data_box4 td a")  
-    
-    url.collect do |site|
-
-      site.attribute("href").value
+    second_page_urls = []
+    url.each do |site| 
+      # peak = Co14ers::Mountain.new_from_website(site.text)
+      second_page_urls << @@main_webpage + site.attribute("href").value 
     end 
-    
+    second_page_urls
   end 
   
   def self.scrape_second_page
-    #binding.pry 
     scrape_main_page.each do |site|
-      second_page = Nokogiri::HTML(open("https://www.14ers.com/" + site))
-
-      url = second_page.css("div.sidebar_content ul.sectionlist li")[8]
-      url.each do |site|
-        binding.pry 
-        site.children.attribute("href").value
+      second_page = Nokogiri::HTML(open(site))
+      url = second_page.css("div.sidebar_content ul.sectionlist li")[8].children
+      url.collect do |console_site|
+        @@main_webpage + console_site.attribute("href").value
       end 
-      
-
+ 
     end 
   end 
   
-  def self.make_peak_objects
+  def self.peak_attributes
  
-  end 
-
+    scrape_second_page.each do |site|
+      binding.pry 
+      console = Nokogiri::HTML(open(@@main_webpage + site))
+      binding.pry 
+      console.css()
+      # range = 
+      # elevation = 
+      # elevation_gain = 
+      # trip_length = 
+      # difficulty = 
+    end
+  end
 end 
- Co14ers::Scraper.scrape_second_page
 
-#   def self.scrape_from_main_page_headers
-#     main_page = self.scrape_main_page 
-#     mountain_ranges = []
-    
-#     range_headers = main_page.css("table.data_box4 th span") 
-#     range_headers.each_with_index do |range, index|
-#       text = "#{index+1}. #{range.text}"
-#       mountain_ranges << text  
-#     end 
-
-#     mountain_ranges.join(" ")
-#   end 
-
-#   def self.scrape_main_page_url
-#     main_page = self.scrape_main_page
-#     #binding.pry 
-#     #url = main_page.css("div.csspopup li a").attribute("href") 
-    
-    
-#     #Co14ers::Moutain.new_from_console(url, name)
-    
-    
-    
-#   end 
-
+ Co14ers::Scraper.peak_attributes 
+ 
 
 #   def self.scrape_from_main_page_peak_list
 #     main_page = self. scrape_main_page
@@ -78,20 +62,6 @@ end
 #     end 
 #     peaks.join(" ")
 #   end 
-
-#   def self.scrap_console(url)
-#     # peak_planning_console = Nokogiri::HTML(open(url))
-#     # peak = Co14ers::Moutain.new_from_console(peak.name, peak.range, peak.name_history, peak.elevation, peak.elevation_gain, peak.difficulty, peak.trip_length)  
-#     # peak.name = 
-#     # peak.range = 
-#     # peak.name_history = 
-#     # peak.elevation = 
-#     # peak.elevation_gain = 
-#     # peak.difficulty = 
-#     # peak.trip_length = 
-#   end 
-# end 
-#   Co14ers::Scraper.scrape_main_page_url
 
 
 #   # peak_names.each do |peak|
