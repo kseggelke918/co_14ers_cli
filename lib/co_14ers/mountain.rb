@@ -2,11 +2,21 @@ class Co14ers::Mountain
   attr_accessor :name, :range, :elevation, :elevation_gain, :name_history, :difficulty, :trip_length
   
   # need list of peak objects that contain the attributes: peak.name, peak.range, peak.elevation, peak.elevation_gain, peak.name_history, peak.difficulty, peak.trip_length 
+  @@all = []
   
-  
-  def initialize(name)
-    @name = name 
+  def initialize(name =nil, range=nil, name_history=nil, elevation=nil, elevation_gain=nil, difficulty=nil, trip_length=nil)
+    @name = name
+    @range = range 
+    @name_history = name_history
+    @elevation_gain = elevation_gain
+    @elevation = elevation
+    @difficulty = difficulty
+    @trip_length = trip_length
     save 
+  end 
+  
+  def self.new_from_console
+    self.new(name, range, name_history, elevation, elevation_gain, difficulty, trip_length)
   end 
 
   def save 
@@ -23,19 +33,22 @@ class Co14ers::Mountain
     if peak.range == input 
       peak 
     end 
+  end 
       
   end 
   
   def self.mountain_info(input)
     self.all.each do |peak|
       if peak.name == input 
-        puts "Name: #{peak.name}"
-        puts "Range: #{peak.range}"
-        puts "Name History: #{peak.name_history}"
-        puts "Elevation Gain: #{peak.elevation_gain}"
-        puts "Elevation: #{peak.elevation}"
-        puts "Difficulty Level: #{peak.difficulty}"
-        puts "Trip Length: #{peak.trip_length}"
+        puts "Test name:"
+        puts "Test Range"
+        # puts "Name: #{peak.name}"
+        # puts "Range: #{peak.range}"
+        # puts "Name History: #{peak.name_history}"
+        # puts "Elevation Gain: #{peak.elevation_gain}"
+        # puts "Elevation: #{peak.elevation}"
+        # puts "Difficulty Level: #{peak.difficulty}"
+        # puts "Trip Length: #{peak.trip_length}"
       end 
     end 
   end 
@@ -52,26 +65,11 @@ class Co14ers::Mountain
     puts "7. Sangre de Cristo Range"  
   end 
   
-  def self.peaks 
-    
-    
-  end 
-  
-  
 
 
 #scaper class - grabbing info only and instantiate new mountain objects in the scraper class 
 #mountain class will be a model for what each mountain object will look like 
 
 
-
-
-# peak.name
-# peak.range 
-# peak.elevation 
-# peak.elevation_gain
-# peak.name_history 
-# peak.difficulty 
-# peak.trip_length
 
 end 

@@ -16,28 +16,35 @@ class Co14ers::Scraper
       text = "#{index+1}. #{range.text}"
       mountain_ranges << text  
     end 
-    #binding.pry
-    mountain_ranges
+
+    mountain_ranges.join(" ")
   end 
 
-  def self.scraper_from_main_page_peak_list
+  def self.scrape_from_main_page_peak_list
     main_page = Nokogiri::HTML(open("https://www.14ers.com/"))
     peaks = []
     
     peak_names = main_page.css("table.data_box4 td a")
     peak_names.each_with_index do |peak, index|
-
       text = "#{index+1}. #{peak.text}"
       peaks << text 
     end 
-    
+    peaks.join(" ")
   end 
 
   def self.scrap_console(url)
-
+    # peak_planning_console = Nokogiri::HTML(open())
+    # peak = Co14ers::Moutain.new_from_console(peak.name, peak.range, peak.name_history, peak.elevation, peak.elevation_gain, peak.difficulty, peak.trip_length)  
+    # peak.name = 
+    # peak.range = 
+    # peak.name_history = 
+    # peak.elevation = 
+    # peak.elevation_gain = 
+    # peak.difficulty = 
+    # peak.trip_length = 
   end 
 end 
-  # Co14ers::Scraper.scrape_from_main_page_headers
+  # Co14ers::Scraper.scrape_from_main_page_peak_list
 
 
   # peak_names.each do |peak|
