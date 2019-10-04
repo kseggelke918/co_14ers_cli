@@ -7,8 +7,8 @@ class Co14ers::Scraper
   attr_accessor :name, :elevation, :mountain 
 # https://www.14ers.com/ - main page 
 
-  def self.scrape_from_main_page_headers(url)
-    main_page = Nokogiri::HTML(open(url))
+  def self.scrape_from_main_page_headers
+    main_page = Nokogiri::HTML(open("https://www.14ers.com/"))
     mountain_ranges = []
     
     range_headers = main_page.css("table.data_box4 th span") 
@@ -16,15 +16,17 @@ class Co14ers::Scraper
       text = "#{index+1}. #{range.text}"
       mountain_ranges << text  
     end 
+    #binding.pry
+    mountain_ranges
   end 
 
-  def self.scraper_from_main_page_peak_list(url)
-    main_page = Nokogiri::HTML(open(url))
+  def self.scraper_from_main_page_peak_list
+    main_page = Nokogiri::HTML(open("https://www.14ers.com/"))
     peaks = []
     
     peak_names = main_page.css("table.data_box4 td a")
     peak_names.each_with_index do |peak, index|
-      #binding.pry 
+
       text = "#{index+1}. #{peak.text}"
       peaks << text 
     end 
@@ -35,7 +37,7 @@ class Co14ers::Scraper
 
   end 
 end 
-  Co14ers::Scraper.scraper_from_main_page_peak_list("https://www.14ers.com/")
+  # Co14ers::Scraper.scrape_from_main_page_headers
 
 
   # peak_names.each do |peak|

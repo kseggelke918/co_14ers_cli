@@ -10,7 +10,7 @@ class Co14ers::CLI
   def ranges
     user_input = gets.chomp.downcase 
     if user_input == "list"
-      list
+      range_list
       peak_names
       mountain_information
     elsif user_input == "exit"
@@ -21,22 +21,16 @@ class Co14ers::CLI
       end 
   end 
   
-  def list 
+  def range_list 
     @mountain_ranges = Co14ers::Mountain.ranges
-    # puts "1. Front Range"  
-    # puts "2. Tenmile Range"
-    # puts "3. Mosquito Range"
-    # puts "4. Sawatch Range"
-    # puts "5. Elk Mountains"
-    # puts "6. San Juan Mountains"
-    # puts "7. Sangre de Cristo Range"
   end 
   
   def peak_names
     puts "For a list of peaks in a range, enter the corresponding range:"
-    # @peaks = Co14ers::Mountain.peaks 
+     
 
-    @range_input = gets.chomp 
+    @range_input = gets.chomp.downcase 
+    # Co14ers::Mountain.find_range(range_input)  
     if @range_input == "1"
       puts "1. Grays Peak"
       puts "2. Torreys Peak"
@@ -103,13 +97,14 @@ class Co14ers::CLI
       puts "Ellingwood Point"
       puts "Little Bear Peak"
     else 
-      puts "Please enter a valid number."
+      puts "Please enter a valid range."
     end 
   end 
  
  def mountain_information
-   puts "For information on a specific mountain, please enter the corresponding number:"
+   puts "For information on a specific mountain, please enter the name of the mountain:"
    mountain_info_input = gets.chomp.downcase 
+   # Co14ers::Mountain.mountain_info(mountain_info_input) 
    if @range_input == "1"
      if mountain_info_input == "1" #Grays peak 
         puts "elevation @ summit = 14,270"
