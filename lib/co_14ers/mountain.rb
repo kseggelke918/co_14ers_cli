@@ -1,7 +1,6 @@
 class Co14ers::Mountain
   attr_accessor :name, :range, :elevation, :elevation_gain, :name_history, :difficulty, :trip_length, :url
   
-  # need list of peak objects that contain the attributes: peak.name, peak.range, peak.elevation, peak.elevation_gain, peak.name_history, peak.difficulty, peak.trip_length 
   @@all = []
   
   def initialize(name, url, range=nil, elevation=nil, elevation_gain=nil, difficulty=nil, trip_length=nil)
