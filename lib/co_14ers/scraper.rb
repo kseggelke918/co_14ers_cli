@@ -14,8 +14,11 @@ class Co14ers::Scraper
   def self.scrape_main_page 
     url = get_main_page.css("table.data_box4 td a")  
     second_page_urls = []
+    peaks = []
     url.each do |site| 
-      # peak = Co14ers::Mountain.new_from_website(site.text)
+      peak_info = {
+        :name => site.text 
+      }
       second_page_urls << @@main_webpage + site.attribute("href").value 
     end 
     second_page_urls
@@ -27,6 +30,7 @@ class Co14ers::Scraper
       second_page = Nokogiri::HTML(open(site))
       url = second_page.css("div.sidebar_content ul.sectionlist li")[8].children
       url.each do |console_site|
+        peak_info[:url] = @@main_webpage + console_site.attribute("href").value
         console_page_urls <<@@main_webpage + console_site.attribute("href").value
       end 
     end 
@@ -39,16 +43,16 @@ class Co14ers::Scraper
       console = Nokogiri::HTML(open(site))
       binding.pry 
       console.css()
-      # range = 
-      # elevation = 
-      # elevation_gain = 
-      # trip_length = 
-      # difficulty = 
+      # peak_info[:range] = 
+      # peak_info[:elevation] = 
+      # peak_info[:elevation_gain] = 
+      # peak_info[:trip_length] = 
+      # peak_info[:difficulty] = 
     end
   end
 end 
 
- Co14ers::Scraper.peak_attributes 
+Co14ers::Scraper.peak_attributes 
  
 
 #   def self.scrape_from_main_page_peak_list

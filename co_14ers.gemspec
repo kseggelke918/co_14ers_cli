@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["'Katie Seggelke'"]
   spec.email         = ["'katie.seggelke@gmail.com'"]
 
-  spec.summary       = %q{ Write a short summary, because RubyGems requires one.}
+  spec.summary       = %q{A comprehenive list of Colorado peaks with elevations greater than 14,000 feet.}
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'

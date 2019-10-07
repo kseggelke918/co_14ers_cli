@@ -76,7 +76,6 @@ class Co14ers::Mountain
     #   if peak.name == input 
         # puts "Name: #{peak.name}"
         # puts "Range: #{peak.range}"
-        # puts "Name History: #{peak.name_history}"
         # puts "Elevation Gain: #{peak.elevation_gain}"
         # puts "Elevation: #{peak.elevation}"
         # puts "Difficulty Level: #{peak.difficulty}"
