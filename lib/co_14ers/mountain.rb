@@ -1,5 +1,6 @@
 class Co14ers::Mountain
-  attr_accessor :name, :url 
+  attr_accessor :name
+
   
   @@all = []
   
@@ -7,6 +8,15 @@ class Co14ers::Mountain
     @name = name
     @url = url 
     save 
+  end 
+  
+  def url 
+    second_page = Nokogiri::HTML(open(@url))
+    cosole_url = second_page.css("div.sidebar_content ul.sectionlist li")[8].children
+    binding.pry 
+    cosole_url.each do |console_site|
+      console_url = "https://www.14ers.com/" + console_site.attribute("href").value
+    end 
   end 
   
   def self.new_from_website(name, url)
@@ -22,9 +32,11 @@ class Co14ers::Mountain
   end 
   
   def self.mountain_info(input)
+          # binding.pry 
     self.all.each do |peak|
-      binding.pry 
-      if peak.name.downcase == input 
+
+      if peak.name.downcase == input
+        # binding.pry 
         puts "Name: #{peak.name}"
         puts "For more information, please visit #{peak.url}"
       else 
@@ -34,3 +46,6 @@ class Co14ers::Mountain
   end 
   
 end 
+
+test = Co14ers::Mountain.new(test, "https://www.14ers.com/photos/peakmain.php?peak=Longs+Peak")
+test.url 

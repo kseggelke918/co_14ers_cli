@@ -1,6 +1,7 @@
 class Co14ers::CLI
 
   def call 
+    
     puts "For a list of Colorado 14ers, please type 'list'. To exit, please type 'exit'"
     mountains 
   end 
@@ -24,9 +25,10 @@ class Co14ers::CLI
  
  def mountain_information
    puts "For more information about a mountain, please type the name of that mountain:"
+   Co14ers::Scraper.scrape
     input = gets.chomp.downcase 
     Co14ers::Mountain.mountain_info(input)
-    
+   
  end 
  
   
