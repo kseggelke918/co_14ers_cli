@@ -1,15 +1,13 @@
 class Co14ers::CLI
 
   def call 
-    # call scraper method(s)
-    puts "For a list of mountain ranges, please type 'list'. To exit, please type 'exit'"
-    ranges
+    puts "For a list of Colorado 14ers, please type 'list'. To exit, please type 'exit'"
+    mountains 
   end 
 
-  def ranges
+  def mountains 
     user_input = gets.chomp.downcase 
     if user_input == "list"
-      range_list
       peak_names
       mountain_information
     elsif user_input == "exit"
@@ -25,22 +23,21 @@ class Co14ers::CLI
   end 
   
   def peak_names
-    puts "For a list of peaks in a range, enter the corresponding range:"
-    range_input = gets.chomp.downcase 
-    Co14ers::Mountain.find_range(range_input) 
+    Co14ers::Scraper.scrape_peak_names
+    
   end 
  
  def mountain_information
-   #call detailed scraper method 
-   puts "For information on a specific mountain, please enter the name of the mountain:"
-   mountain_info_input = gets.chomp.downcase 
-   Co14ers::Mountain.mountain_info(mountain_info_input) 
+   puts "For more information about a mountain, please type the name of that mountain:"
+    input = gets.chomp.downcase 
+    Co14ers::Mountain.mountain_info(input)
+    
  end 
  
   
 end 
  	
-
+mountain_information 
 
 
 

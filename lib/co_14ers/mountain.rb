@@ -20,64 +20,14 @@ class Co14ers::Mountain
   def self.all 
     @@all 
   end 
-
-  def self.find_range(input)
-    if input == "1"
-      puts "1. Grays Peak"
-      puts "2. Torreys Peak"
-      puts "3. Mt. Evans"
-      puts "4. Longs Peak"
-    elsif input == "2"
-      puts "1. Quandary Peak"  
-    elsif input == "3"
-      puts "1. Mt. Lincoln"
-      puts "2. Mt. Cameron"
-      puts "3. Mt. Bross"
-    elsif input == "4"
-      puts "Mt. Elbert"
-      puts "Mt. Massive"
-      puts "Mt. Harvard" 
-    elsif input == "5"
-      puts "Castle Peak"
-      puts "Maroon Peak"
-    elsif input == "6"
-      puts "Uncompahgre Peak"
-      puts "Mt. Wilson"
-      puts "El Diente Peak"
-    elsif input == "7"
-      puts "Blana Peak"
-      puts "Crestone Peak"
-      puts "Crestone Needle"
-    else 
-      puts "Please enter a valid range."
-    end 
-    
-    # self.all.collect do |peak|
-    # if peak.range == input 
-    #   peak 
-    # end 
-  # end 
-      
-  end 
   
   def self.mountain_info(input)
-    puts "elevation @ summit = 14,270"
-        puts "elevation gain: 3000ft"
-        puts "most recent conditions: yada yada yada"
-        puts "name history: history of peak name"
-        puts "difficulty (standard route): class 1"
-        puts "trip length: 8 miles"
-    
-    # self.all.each do |peak|
-    #   if peak.name == input 
-        # puts "Name: #{peak.name}"
-        # puts "Range: #{peak.range}"
-        # puts "Elevation Gain: #{peak.elevation_gain}"
-        # puts "Elevation: #{peak.elevation}"
-        # puts "Difficulty Level: #{peak.difficulty}"
-        # puts "Trip Length: #{peak.trip_length}"
-    #   end 
-    # end 
+    self.all.each do |peak|
+      if peak.name == input 
+        puts "Name: #{peak.name}"
+        puts "URL: #{peak.url}"
+      end 
+    end 
   end 
   
   def self.ranges

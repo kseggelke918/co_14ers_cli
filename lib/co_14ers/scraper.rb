@@ -25,10 +25,22 @@ class Co14ers::Scraper
         end 
       end 
     end 
-              binding.pry
+      binding.pry
   end 
   
-  # def self.main_page
+  def self.scrape_peak_names
+    get_main_page = Nokogiri::HTML(open(@@main_webpage))
+    peak_names = get_main_page.css("table.data_box4 td a")
+    peak_names.each_with_index do |peak, index|
+      puts "#{index + 1}. #{peak.text}"
+    end 
+  end 
+  
+ 
+end 
+ Co14ers::Scraper.scrape_peak_names
+
+ # def self.main_page
   #   second_page_urls = []
   #   get_main_page = Nokogiri::HTML(open(@@main_webpage)) 
   #   data = get_main_page.css("table.data_box4 td a") 
@@ -56,10 +68,6 @@ class Co14ers::Scraper
   #   console_page_urls
   #   binding.pry 
   # end 
-
-end 
- Co14ers::Scraper.scrape 
-
 
 
 #   def self.scrape_main_page 
