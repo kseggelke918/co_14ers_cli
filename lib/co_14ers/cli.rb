@@ -2,7 +2,7 @@ class Co14ers::CLI
 
   def call 
     # call scraper method(s)
-    puts "For a list of Colorado 14ers, please type 'list'. To exit, please type 'exit'"
+    puts "For a list of mountain ranges, please type 'list'. To exit, please type 'exit'"
     ranges
   end 
 
