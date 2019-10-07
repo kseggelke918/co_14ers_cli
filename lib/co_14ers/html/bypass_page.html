@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>14ers.com &bull; Grays Peak (Main Peak Page)</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="keywords" content="Grays Peak, 14er Grays Peak, Grays Peak (Main Peak Page), Grays Peak and Torreys Peak, Grays, Grays, Grays, Grays Peak">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+<meta name="copyright" content="14ers.com">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="stylesheet" type="text/css" href="/css/fontawesome-v5.8.1/css/all.css">
+<link rel="stylesheet" type="text/css" href="/css/site.css?date=20190620">
+<link rel="stylesheet" type="text/css" href="/css/sitecolors_std.css?date=20190620">
+<link rel="stylesheet" type="text/css" href="/scripts/jquery/jquery-ui-1.12.1/jquery-ui.min.css?date=20190331">
+<link rel="stylesheet" type="text/css" href="/css/jquery_uioverrides.css?date=20190331">
+<script type="text/javascript" src="/scripts/jquery/jquery-3.3.1.min.js?date=20190331"></script>
+<script type="text/javascript" src="/scripts/jquery/jquery-ui-1.12.1/jquery-ui.min.js?date=20190331"></script>
+<script type="text/javascript">
+	var jqy = jQuery.noConflict();
+</script>
+</head>
+
+<body class="MainText1">
+
+<script type="text/javascript">
+
+jqy( document ).ready(function() {
+	jqy('#sitemenu-compact > ul > li > a').click(function() {
+		jqy('#sitemenu-compact li').removeClass('active');
+		jqy(this).closest('li').addClass('active');	
+		var checkElement = jqy(this).next();
+		if((checkElement.is('ul')) && (checkElement.is(':visible'))) {
+		 jqy(this).closest('li').removeClass('active');
+		 checkElement.slideUp('normal');
+		}
+		if((checkElement.is('ul')) && (!checkElement.is(':visible'))) {
+		 jqy('#sitemenu-compact ul ul:visible').slideUp('normal');
+		 checkElement.slideDown('normal');
+		}
+		if(jqy(this).closest('li').find('ul').children().length == 0) {
+		 return true;
+		} else {
+		 return false;	
+		}		
+	});
+	jqy('body').bind('touchstart', function() {});
+});
+
+function menuExpand() {
+	jqy('#compactmenu').css("display","block");
+	jqy("#hamburger").attr("onclick","menuClose()");
+	jqy('#hamburger').addClass('open');
+	jqy('html, body').animate({ scrollTop: 0 }, 'fast');
+}
+
+function menuClose() {
+	jqy('#compactmenu').css("display","none");
+	jqy('#hamburger').removeClass('open');
+	jqy("#hamburger").attr("onclick","menuExpand()");
+}
+	
+</script>
+
+
+<div id="siteheader">
+  <div id="siteheader-logo">
+   <a target="_top" href="/" title="14ers.com Home"><img src="/images/site_logomain_300x116.png" alt="logo"></a>
+  </div>
+
+  <div id="hamburger" class="hamburger-menu" onclick="menuExpand();return false">
+   <span></span><span></span><span></span>
+  </div>
+
+  <div id="siteheader-login">
+   <a href="/php14ers/loginviaforum.php" class="maincolor" style="margin-right:20px;" title="Log In">Log In&nbsp;<span class="fas fa-sign-in-alt"></span></a>
+  </div>
+
+  <div id="siteheader-iconlinks">
+   <a href="/search.php" class="maincolor" title="Search"><span class="fas fa-search"></span></a>
+  </div>
+
+  <div id="siteheader-menuwrap">
+   <ul id="sitemenu">
+	<li><a class="menu_topitem" href="/photos/photos_14ers1.php">Peaks</a>
+	<ul class="menu_bottomitems">
+		<li><a class="strong" target="_top" href="/photos/photos_14ers1.php">14ers</a></li>
+		<li><a target="_top" href="/php14ers/panoramas.php">360&deg; Summit Panoramas</a></li>
+		<li><a target="_top" href="/php14ers/mileage.php">Peak-to-Peak Mileage Chart</a></li>
+		<li class="sep"></li>
+		<li><a class="strong" target="_top" href="/13ers/13ers.php?displaytype=0&sublist=13ers&listd=list">13ers</a></li>
+        <li><a target="_top" href="/php14ers/panoramas.php?type=13ers">360&deg; Summit Panoramas</a></li>
+		<li class="sep"></li>
+		<li><a target="_top" href="/map.php">Map</a></li>
+		<li><a target="_top" href="/php14ers/exportpeaks.php">Export Peak Names to File</a></li>
+	</ul>
+	</li>
+	<li><a class="menu_topitem" href="/routes.php">Routes</a>
+	<ul class="menu_bottomitems">
+		<li><a class="strong" target="_top" href="/routes.php">14er Route Descriptions</a></li>
+		<li><a target="_top" href="/php14ers/routeselector.php">Route Selection Tool</a></li>
+		<li><a target="_top" href="/routes_bydifficulty.php">Routes by Difficulty</a></li>
+		<li><a target="_top" href="/routes_byriskfactor.php">Routes by Risk Factor</a></li>
+		<li><a target="_top" href="/php14ers/timesmain.php">User Climb Times</a></li>
+        <li><a target="_top" href="/php14ers/gps_downloads.php">.GPX & .KML Route Files</a></li>
+        <li><a target="_top" href="/php14ers/googleearth_peaksandroutes.php">Google Earth Master File</a></li>
+		<li><a target="_top" href="/php14ers/cellreportmain.php">Cell Phone Reception on Summits</a></li>
+		<li><a target="_top" href="/php14ers/peakusage.php">Crowds</a></li>
+		<li class="sep"></li>
+		<li><a class="strong" target="_top" href="/13ers/13ers.php?displaytype=0&sublist=13ers&listd=list">13er Route Descriptions</a></li>
+		<li class="sep"></li>
+		<li><a target="_top" href="/safety.php">Mountaineering Safety</a></li>
+		<li><a target="_blank" href="http://www.lnt.org/programs/principles.php" rel="noopener">Leave no Trace (LNT)</a></li>
+        <li><a target="_top" href="/forum/viewtopic.php?t=15348">14er FAQ</a></li>
+		<li><a target="_top" href="/difficultyratings.php">Difficulty Rating System</a></li>
+		<li><a target="_top" href="/php14ers/routeselector.php?diff=Class+1">Easiest 14er Hikes</a></li>
+		<li><a target="_top" href="/gearlist.php">Gear List</a></li>
+		<li><a target="_top" href="/php14ers/topomaps.php">Topo Maps</a></li>
+		<li><a target="_top" href="/sunchart.php">Sunrise/Sunset Chart</a></li>
+	</ul>
+	</li>
+	<li><a class="menu_topitem" style="" href="/php14ers/peakstatus_main.php">Peak Conditions</a>
+	<ul class="menu_bottomitems">
+		<li><a class="strong" target="_top" href="/php14ers/peakstatus_main.php">View Peak Condition Reports</a></li>
+		<li><a target="_top" href="/php14ers/peakstatus_add.php">Add a Condition Report</a></li>
+	</ul>
+	</li>
+    <li><a class="menu_topitem" href="/php14ers/tripmain.php">Trip Reports</a>
+	<ul class="menu_bottomitems">
+		<li><a class="strong" target="_top" href="/php14ers/tripmain.php">View Trip Reports</a></li>	
+		<li><a target="_top" href="/php14ers/addreport.php">Add a Trip Report</a></li>
+	</ul>
+	</li>
+	<li><a class="menu_topitem" href="/php14ers/trailheadsmain.php">Trailheads</a>
+	<ul class="menu_bottomitems">
+		<li><a class="strong" target="_top" href="/php14ers/trailheadsmain.php">View Trailheads</a></li>	
+		<li><a target="_top" href="/php14ers/threportadd.php">Add a Trailhead Status Report</a></li>	
+        <li class="sep"></li>
+		<li><a target="_top" href="/php14ers/cellreportmain.php">Update TH Cell Phone Reception</a></li>
+		<li><a target="_top" href="/php14ers/trailheads_bydifficulty.php">14er THs by Road Difficulty</a></li>	
+		<li><a target="_top" href="/map.php?trailheads=yes">14er THs on Map</a></li>	
+	</ul>
+	</li>
+    <li><a class="menu_topitem" style="" href="/php14ers/weather.php">Weather</a>
+	<ul class="menu_bottomitems">
+		<li><a class="strong" target="_top" href="/php14ers/weather.php">Peak Forecasts</a></li>
+        <li><a target="_blank" href="https://www.wunderground.com/wundermap/?lat=39.04157&lon=-106.09080" rel="noopener">WunderMap<img src="/images/icon_globe_medium.png" alt="link" class="picglobe"></a></li>
+		<li><a target="_blank" href="http://www.cotrip.org/roadConditions.htm" rel="noopener">Road Conditions (CDOT)<img src="/images/icon_globe_medium.png" alt="link" class="picglobe"></a></li>
+		<li><a target="_blank" href="http://www.weather.gov/sat_tab.php?image=ir" rel="noopener">NOAA Satellite Imagery<img src="/images/icon_globe_medium.png" class="picglobe"></a></li>
+		<li><a target="_blank" href="http://www.weather.gov/outlook_tab.php" rel="noopener">NOAA National Maps<img src="/images/icon_globe_medium.png" alt="link" class="picglobe"></a></li>
+		<li><a target="_blank" href="http://www.nws.noaa.gov/nwr/coverage/stations.php?State=CO" rel="noopener">NOAA Radio Stations<img src="/images/icon_globe_medium.png" alt="link" class="picglobe"></a></li>
+        <li><a target="_blank" href="http://www.nohrsc.noaa.gov/interactive/html/map.html?ql=station&zoom=&zoom4.x=11&zoom4.y=7&loc=Latitude%2CLongitude%3B+City%2CST%3B+or+Station+ID&var=ssm_depth&snap=1&o9=1&o12=1&o13=1&lbl=m&mode=pan&extents=us&min_x=-106.90833333333&min_y=37.766666666663&max_x=-103.15&max_y=39.883333333329&coord_x=-105.029166666665&coord_y=38.824999999995995&zbox_n=&zbox_s=&zbox_e=&zbox_w=&metric=0&bgvar=dem&shdvar=shading&width=800&height=450&nw=800&nh=450&h_o=0&font=0&js=1&uc=0" rel="noopener">NOAA Snow Level Info<img src="/images/icon_globe_medium.png" alt="link" class="picglobe"></a></li>
+		<li><a target="_blank" href="http://www.wcc.nrcs.usda.gov/ftpref/data/water/wcs/gis/maps/co_swepctnormal_update.pdf" rel="noopener">CO Snow % of Normal<img src="/images/icon_globe_medium.png" alt="link" class="picglobe"></a></li>
+		<li><a target="_blank" href="http://www.wcc.nrcs.usda.gov/ftpref/data/water/wcs/basinsweplots/co/basinplotco19.gif?" rel="noopener">CO Snow Line Graph<img src="/images/icon_globe_medium.png" alt="link" class="picglobe"></a></li>
+	</ul>
+	</li>
+	<li><a class="menu_topitem" href="/php14ers/usrchecklists.php">Checklists</a>
+	<ul class="menu_bottomitems">
+		<li><a target="_top" href="/php14ers/usrpeaksvall.php?peaktype=14ers">14er User Checklists</a></li>
+		<li><a target="_top" href="/php14ers/usrpeaksvall.php?peaktype=13ers">13er User Checklists</a></li>
+        <li><a target="_top" href="/php14ers/usrpeaksstat.php">Checklist Statistics</a></li>
+	</ul>
+	</li>
+	<li><a class="menu_topitem" href="/php14ers/gearmain.php">Swap/Shop</a>
+	<ul class="menu_bottomitems">
+		<li><a class="strong"  target="_top" href="/php14ers/gearmain.php">Gear Swap</a></li>
+		<li><a target="_top" href="/php14ers/store.php">14ers.com Store (closed)</a></li>
+        <li><a target="_top" href="/mobileapp.php">14ers.com Free Mobile App</a></li>
+		<li class="sep"></li>
+		<li><a target="_blank" href="http://www.avantlink.com/click.php?tt=ml&ti=3402&pw=55331" rel="noopener">REI.com<img src="/images/icon_globe_medium.png" alt="link" class="picglobe"></a></li>
+		<li><a target="_blank" href="http://www.tkqlhce.com/click-1661703-10281785?url=http://www.backcountry.com" rel="noopener">Backcountry.com<img src="/images/icon_globe_medium.png" alt="link" class="picglobe"></a></li>
+		<li><a target="_blank" href="http://www.steepandcheap.com/?AID=10281785&PID=1661703&SID=undefined" rel="noopener">SteepAndCheap.com<img src="/images/icon_globe_medium.png" alt="link" class="picglobe"></a></li>
+		<li><a target="_blank" href="http://www.avantlink.com/click.php?tt=ml&ti=47621&pw=55331" rel="noopener">SierraTradingPost.com<img src="/images/icon_globe_medium.png" alt="link" class="picglobe"></a></li>
+		<li><a target="_blank" href="http://www.avantlink.com/click.php?tt=ml&ti=160445&pw=55331" rel="noopener">Bent Gate Mountaineering<img src="/images/icon_globe_medium.png" alt="link" class="picglobe"></a></li>
+        <li class="sep"></li>
+        <li><a target="_blank" href="https://14ersmaps.com/" rel="noopener">14erMaps.com<img src="/images/icon_globe_medium.png" alt="link" class="picglobe"></a></li>
+        <li><a target="_blank" href="http://www.peakmarker.com" rel="noopener">Peakmarker.com<img src="/images/icon_globe_medium.png" alt="link" class="picglobe"></a></li>
+             
+    </ul>
+	</li>
+	<li><a class="menu_topitem" href="/forum/index.php">Forum</a>
+	<ul class="menu_bottomitems">
+		<li><a class="strong" target="_top" href="/forum/index.php">Enter the Forum</a></li>
+		<li class="sep"></li>
+		<li><a target="_top" href="/php14ers/uphotosall.php">User Photos: By Category</a></li>
+		<li><a target="_top" href="/php14ers/uphotos.php">User Photos: Recent Uploads</a></li>
+		<li><a target="_top" href="/php14ers/uploadimage.php">User Photos: Upload Photo(s)</a></li>
+	</ul>
+	</li>
+	<li><a class="menu_topitem" href="#">More...</a>
+	<ul class="menu_bottomitems menu_bottomitems_end">
+	    <li><a target="_top" href="/about.php">About 14ers.com</a></li>
+		<li><a target="_top" href="/search.php">Search Site</a></li>
+        <li><a target="_top" href="/links.php">Links</a></li>
+		<li><a target="_top" href="/support.php">Support 14ers.com</a></li>
+		<li><a target="_top" href="/php14ers/emailadmin.php">Contact Site Admin</a></li>
+        <li><a target="_blank" href="https://www.instagram.com/14erscom/" rel="noopener">14ers.com on Instagram<img src="/images/icon_globe_medium.png" alt="link" class="picglobe"></a></li>
+		<li><a target="_blank" href="https://www.facebook.com/groups/82338447841/" rel="noopener">14ers.com on Facebook<img src="/images/icon_globe_medium.png" alt="link" class="picglobe"></a></li>
+	</ul>
+	</li>
+   </ul>
+  </div>
+
+  <div id="compactmenu">
+   <div id="sitemenu-compact">
+    <ul>
+        <li class="has-sub"><a href="#"><span>Peaks</span></a>
+        <ul class="menu_bottomitems">
+            <li><a target="_top" href="/photos/photos_14ers1.php">14ers</a></li>
+            <li><a target="_top" href="/13ers/13ers.php?displaytype=0&sublist=13ers&listd=list">13ers</a></li>
+            <li><a target="_top" href="/php14ers/panoramas.php?type=14ers">360&deg; Summit Panoramas</a></li>
+            <li><a target="_top" href="/map.php">Map</a></li>
+        </ul>
+        </li>
+        <li class="has-sub"><a href="#"><span>Routes</span></a>
+        <ul class="menu_bottomitems">
+            <li><a target="_top" href="/routes.php"><strong>14er</strong> Routes</a></li>
+            <li><a target="_top" href="/php14ers/routeselector.php">Route Selection Tool</a></li>
+            <li><a target="_top" href="/routes_bydifficulty.php">Routes by Difficulty</a></li>
+            <li><a target="_top" href="/routes_byriskfactor.php">Routes by Risk Factor</a></li>
+            <li><a target="_top" href="/php14ers/timesmain.php">User Climb Times</a></li>
+            <li><a target="_top" href="/php14ers/routeselector.php?diff=Class+1">Easiest 14er Hikes</a></li>
+            <li><a target="_top" href="/php14ers/cellreportmain.php">Cell Phone Reception</a></li>
+            <li><a target="_top" href="/13ers/13ers.php?displaytype=0&sublist=13ers&listd=list"><strong>13er</strong> Routes</a></li>
+            <li><a target="_top" href="/safety.php">Mountaineering Safety</a></li>
+            <li><a target="_top" href="/difficultyratings.php">Difficulty Rating System</a></li>
+            <li><a target="_top" href="/gearlist.php">Gear List</a></li>
+        </ul>
+        </li>
+        <li class="has-sub"><a href="#"><span>Peak Conditions</span></a>
+        <ul class="menu_bottomitems">
+            <li><a target="_top" href="/php14ers/peakstatus_main.php">View Peak Condition Reports</a></li>
+            <li><a target="_top" href="/php14ers/peakstatus_add.php">Add a Condition Report</a></li>
+        </ul>
+        </li>
+        <li class="has-sub"><a href="#"><span>Trip Reports</span></a>
+        <ul class="menu_bottomitems">
+            <li><a target="_top" href="/php14ers/tripmain.php">View Trip Reports</a></li>	
+            <li><a target="_top" href="/php14ers/addreport.php">Add a Trip Report</a></li>
+        </ul>
+        </li>
+        <li class="has-sub"><a href="#"><span>Trailheads</span></a>
+        <ul class="menu_bottomitems">
+            <li><a target="_top" href="/php14ers/trailheadsmain.php">View Trailheads</a></li>	
+            <li><a target="_top" href="/php14ers/threportadd.php">Add a Trailhead Status Report</a></li>	
+            <li><a target="_top" href="/php14ers/cellreportmain.php">Update TH Cell Reception</a></li>
+            <li><a target="_top" href="/php14ers/trailheads_bydifficulty.php">14er THs by Road Difficulty</a></li>	
+        </ul>
+        </li>
+        <li class="has-sub"><a href="#"><span>Weather</span></a>
+        <ul class="menu_bottomitems">
+            <li><a target="_top" href="/php14ers/weather.php">Peak Forecasts</a>
+        </ul>
+        </li>
+        <li class="has-sub"><a href="#"><span>Checklists</span></a>
+        <ul class="menu_bottomitems">
+            <li><a target="_top" href="/php14ers/usrpeaksvall.php?peaktype=14ers">14er User Checklists</a></li>
+            <li><a target="_top" href="/php14ers/usrpeaksvall.php?peaktype=13ers">13er User Checklists</a></li>
+            <li><a target="_top" href="/php14ers/usrpeaksstat.php">Checklist Statistics</a></li>
+        </ul>
+        </li>
+        <li class="has-sub"><a href="#"><span>Swap/Shop</span></a>
+        <ul class="menu_bottomitems">
+            <li><a target="_top" href="/php14ers/gearmain.php">Gear Swap</a></li>
+            <li><a target="_top" href="/mobileapp.php">14ers.com Free Mobile App</a></li>
+            <li><a target="_blank" href="http://www.avantlink.com/click.php?tt=ml&ti=3402&pw=55331" rel="noopener">REI.com<img src="/images/icon_globe_medium.png" alt="link" class="picglobe"></a></li>
+            <li><a target="_blank" href="http://www.tkqlhce.com/click-1661703-10281785?url=http://www.backcountry.com" rel="noopener">Backcountry.com<img src="/images/icon_globe_medium.png" alt="link" class="picglobe"></a></li>
+            <li><a target="_blank" href="http://www.steepandcheap.com/?AID=10281785&PID=1661703&SID=undefined" rel="noopener">SteepAndCheap.com<img src="/images/icon_globe_medium.png" alt="link" class="picglobe"></a></li>
+            <li><a target="_blank" href="http://www.avantlink.com/click.php?tt=ml&ti=47621&pw=55331" rel="noopener">SierraTradingPost.com<img src="/images/icon_globe_medium.png" alt="link" class="picglobe"></a></li>
+            <li><a target="_blank" href="http://www.avantlink.com/click.php?tt=ml&ti=160445&pw=55331" rel="noopener">Bent Gate Mountaineering<img src="/images/icon_globe_medium.png" alt="link" class="picglobe"></a></li>
+            <li><a target="_blank" href="https://14ermaps.com" rel="noopener">14erMaps.com<img src="/images/icon_globe_medium.png" alt="link" class="picglobe"></a></li>
+        </ul>
+        </li>
+        <li class="has-sub"><a href="#"><span>Forum</span></a>
+        <ul class="menu_bottomitems">
+            <li><a target="_top" href="/forum/index.php">Forum</a>
+        </ul>
+        </li>
+        <li class="has-sub"><a href="#"><span>More...</span></a>
+        <ul class="menu_bottomitems menu_bottomitems_end">
+            <li><a target="_top" href="/about.php">About 14ers.com</a></li>
+            <li><a target="_top" href="/search.php">Search Site</a></li>
+            <li><a target="_top" href="/links.php">Links</a></li>
+            <li><a target="_top" href="/support.php">Support 14ers.com</a></li>
+            <li><a target="_top" href="/php14ers/emailadmin.php">Contact Site Admin</a></li>
+        </ul>
+        </li>
+    </ul>	
+   </div>
+  </div>
+
+</div>
+
+
+<div id="wrap">
+
+<div id="breadcrumb-compact">
+<span><a href="./photos_14ers1.php">14ers</a></span> &bull; 
+<span>Grays Peak and Torreys Peak</span>
+</div>
+<div class="breadcrumb" id="breadcrumbwrap">
+  <ul class="breadcrumb">
+   <li><a href="/">Home</a></li>
+   <li><a href="./photos_14ers1.php">14ers</a></li>
+   <li><a href="#">Grays Peak and Torreys Peak (Main Page)</a></li>
+  </ul>
+</div>
+
+
+<a id="top" name="top" accesskey="t"></a>
+
+
+<script type="text/javascript" language="Javascript" src="/scripts/jquery_livequery/livequery.v.1.3.6.js"></script>
+	
+
+<link rel="stylesheet" type="text/css" href="../scripts/lightbox2/dist/css/lightbox.css">
+<script type="text/javascript" language="Javascript" src="../scripts/lightbox2/dist/js/lightbox.min.js"></script>
+
+<script language="Javascript" type="text/javascript">
+jqy( document ).ready(function() {
+	jqy( function() {
+		jqy( "#accordion" ).accordion({
+			header: "h3", collapsible: true, active: false, heightStyle: "content"
+		});	
+	} );
+
+	jqy('#tabGroup').tabs();
+	jqy('#tabGroup').tabs({ active: 0 });
+	jqy('#tabs-2:visible').livequery( function(){ 
+		jqy("#map_canvas").css("width", "100%");
+	});
+	
+	lightbox.option({
+		'showImageNumberLabel': false,
+		'resizeDuration': 200
+	});
+
+});
+</script>
+
+
+
+
+<style type="text/css">
+
+
+#tabs-1, #tabs-2 {
+	width:99%;
+	max-width:99%;
+	overflow:hidden;
+}
+.gmap_framewrap {
+	position:relative;
+	width:97%;
+	max-width:97%;
+	height:505px;
+	float:left;
+	clear:both;
+	vertical-align:top;
+	text-align:left;
+	margin-top:5px;
+	margin-left:5px;
+	margin-bottom:10px;
+}
+
+.gmap_frame {
+	width:97%;
+	max-width:97%;
+	height:505px;
+	border:0px;
+}
+@media (max-width : 700px) {
+	.gmap_framewrap {
+		width:99%;
+		min-width:99%;
+		max-width:99%;
+		height:505px !important;
+	}
+	.gmap_frame {
+		width:100%;
+		height:505px !important;
+	}
+}
+
+#content-wrap {
+    position:relative;
+    background:#ffffff;
+	float:left;
+	clear:both;
+}
+.data_box2 th {
+	font-weight:500;
+	text-transform: uppercase;
+	color:yellow;
+}
+
+.sidebar_section {
+	font-size:11pt;
+	font-weight:500;
+	text-transform: uppercase;
+}
+#tabGroup {
+	height:100%;
+	width:100%;
+	float:left;
+	clear:right;
+	padding-right:1px;
+	min-width:300px;
+	max-width:100%;
+	min-height:100%;
+	margin:0 0 50px 0;
+}
+	
+@media (max-width : 600px) {
+	#content-wrap {
+		width:100%;
+	}
+	#sidebar {
+		width:99%;
+		clear:both;
+		max-width:99%;
+		margin-bottom:5px;
+		padding-right:1px;
+	}
+	#sidebar table {
+	    background-color:#f2ebda;
+	}
+	.sidebar_section {
+		float:left;
+		clear:both;
+		color:#FFF;
+	    text-align:center;
+		margin:0px;
+		width: 100%;
+		padding:5px 0px 5px 0px;
+		background-color:#ccc;
+		margin-top:10px;
+		font-size:11pt;
+		font-weight:bold;
+		background-color:#d57e17;
+		background-image: url("/images/css_boxheader1.gif");
+		border-top:1px solid #aaaaaa;
+		border-bottom:1px solid #aaaaaa;
+	}
+	.sidebar_content {
+		margin:2px 0 6px 5px;
+		position:relative;
+		float:left;
+		clear:both;
+	}
+	#tabGroup {
+		width:100%;
+		max-width:calc(100% - 4px);
+	}
+}
+	
+@media (min-width : 600px) {
+	#content-wrap {
+		width:100%;
+	}
+	#sidebar {
+		float:left;
+		clear:none;
+	    left:0px;
+	    width:215px;
+		max-width:215px;
+	    height:100%;
+		margin-right:2px !important;
+	}
+	div#sidebar.niceborder {
+		max-width:215px !important;
+		margin:0px;
+	}
+	#sidebar table {
+	    background-color:#f2ebda;
+	}
+	.sidebar_section {
+		float:left;
+		clear:both;
+		color:#FFF;
+	    text-align:center;
+		margin:0px;
+		width: 215px;
+		padding:5px 0px 5px 0px;
+		background-color:#ccc;
+		margin-top:10px;
+		font-size:12pt;
+		font-weight:bold;
+		background-color:#d57e17;
+		background-image: url("/images/css_boxheader1.gif");
+		border-top:1px solid #aaaaaa;
+		border-bottom:1px solid #aaaaaa;
+	}
+	.sidebar_content {
+		width:207px;
+		margin:2px 0 6px 5px;
+		position:relative;
+		float:left;
+		clear:both;
+	}
+	#tabGroup {
+		max-width:calc(100% - 225px);
+		margin-left:2px;
+	}
+}
+	
+.spacer {
+	padding:0;
+	background:url(/images/spacer.png) repeat-x bottom;
+}
+.statstitle {
+	float:left;
+	margin:0;
+	padding:0 5px 0 0;
+	height:auto;
+	background-color:#f2ebda;
+}
+.statsvalue {
+	float:right;
+	text-align:right;
+	margin:0;
+	padding:0 0 0 4px;
+	background-color:#f2ebda;
+}
+ul.sectionlist {
+	list-style-type:none;
+	padding:0px;
+	margin:0 0 0 -5px;
+}
+li.sectionlist, .sectionlist li {
+	padding:0px;
+	margin:0px;
+	white-space:nowrap;
+	background-image:url("/images/icon_bullet1_medium.png");
+	background-repeat:no-repeat;
+	background-position:5px 4px;
+	background-size:9px 9px;
+	padding-left:18px;
+}
+#mappane {
+	width:100%;
+	height:800px;
+	float:left;
+	clear:right;
+	margin-left:5px;
+	margin-bottom:35px;
+}
+.ui-tabs .ui-tabs-panel {
+    padding: 2px;
+}
+.ui-tabs .ui-tabs-nav {
+    margin: 0;
+    padding: 0 .2em 0;
+}
+div.picgroup {
+	float:left;
+	clear:both;
+	padding-bottom:4px;
+}
+	
+</style>
+
+
+<script language="Javascript" type="text/javascript">
+jqy( document ).ready(function() {
+	jqy('#tabs2-link').click(function(){
+		jqy('#gmap_map').attr('src', '/php14ers/googlemap14er.php?peak=Grays Peak');
+	});
+	
+});
+</script>
+
+
+
+<div id="content-wrap">
+
+<div id="sidebar" class="niceborder">
+<table class="data_box2 MainText1" style="background-color:#f2ebda;height:100%;width:100%;" cellpadding="0" cellspacing="0">
+<tr>
+<th style="border-bottom:1px solid #aaaaaa;font-size:12pt;">
+Grays Group
+</th>
+</tr>
+<tr>
+<td>
+<div id="accordion">
+<h3><a href='#'><span>Grays Peak</span></a></h3>
+<div>
+<table style="width:100%;border:0px;margin-top:0px;background-color:transparent;" cellpadding="0" cellspacing="0">
+<tr><td style="padding-right:5px;"><span class="bold1">Rank</span>:</td><td style="text-align:left;width:75%">9 of 53</td></tr>
+<tr><td style="padding-right:5px;"><span class="bold1">Elevation</span>:</td><td style="text-align:left;width:75%">14,270&#39;</td></tr>
+<tr><td style="padding-right:5px;"><span class="bold1">Range</span>:</td><td style="text-align:left;width:75%">Front</td></tr>
+<tr><td style="padding-right:5px;"><span class="bold1">Forest</span>:</td><td style="text-align:left;width:75%"><a style="margin:0px;padding:0px;" target="_blank" href="http://www.fs.usda.gov/arp" rel="noreferrer">Arapaho</a></td></tr>
+<tr><td style="padding-right:5px;"><span class="bold1">Lat/Lon</span>:</td><td style="text-align:left;width:75%">39.633820&deg; N<br>-105.817520&deg; W</td></tr>
+<tr><td style="padding-right:5px;"><span class="bold1">Counties</span>:</td><td style="text-align:left;width:75%">Clear Creek<br>Summit</td></tr>
+<tr><td style="padding-right:5px;"><span class="bold1">Towns</span>:</td><td style="text-align:left;width:75%">Bakerville<br>Montezuma<br>Keystone</td></tr>
+</table>
+</div>
+<h3><a href='#'><span>Torreys Peak</span></a></h3>
+<div>
+<table style="width:100%;border:0px;margin-top:0px;background-color:transparent;" cellpadding="0" cellspacing="0">
+<tr><td style="padding-right:5px;"><span class="bold1">Rank</span>:</td><td style="text-align:left;width:75%">11 of 53</td></tr>
+<tr><td style="padding-right:5px;"><span class="bold1">Elevation</span>:</td><td style="text-align:left;width:75%">14,267&#39;</td></tr>
+<tr><td style="padding-right:5px;"><span class="bold1">Range</span>:</td><td style="text-align:left;width:75%">Front</td></tr>
+<tr><td style="padding-right:5px;"><span class="bold1">Forest</span>:</td><td style="text-align:left;width:75%"><a style="margin:0px;padding:0px;" target="_blank" href="http://www.fs.usda.gov/arp" rel="noreferrer">Arapaho</a></td></tr>
+<tr><td style="padding-right:5px;"><span class="bold1">Lat/Lon</span>:</td><td style="text-align:left;width:75%">39.642742&deg; N<br>-105.821259&deg; W</td></tr>
+<tr><td style="padding-right:5px;"><span class="bold1">Counties</span>:</td><td style="text-align:left;width:75%">Clear Creek<br>Summit</td></tr>
+<tr><td style="padding-right:5px;"><span class="bold1">Towns</span>:</td><td style="text-align:left;width:75%">Bakerville<br>Montezuma<br>Keystone</td></tr>
+</table>
+</div>
+</div>
+<div class="sidebar_section">Planning</div>
+<div class="sidebar_content">
+<ul class="sectionlist">
+<li><a href="../routelist.php?peak=Grays+Peak+and+Torreys+Peak">Routes</a></li>
+<li><a href="../php14ers/tripmain.php?parmpeak=14ers_110">Trip Reports</a></li>
+<li><a href="../php14ers/peakstatus_peak.php?peakparm=110&type=14ers">Peak Condition Reports</a></li>
+<li><a href="../php14ers/timesmain.php">User Climb Times</a></li>
+<li><a href="/map.php?startlat=39.633820&startlon=-105.817520&zoomlevel=13">Google/Topo Map</a></li>
+<li><a href="../php14ers/loginviaforum.php?prgm=qpick2&parmpeak=Grays Peak&level=php14ers" title="Nearby Peaks (requires login)">Nearby Peaks<img src="../images/icon_key_medium.png" style="border:0px;width:14px;height:14px;margin-left:3px;margin-bottom:-2px;"></a></li>
+<li><a target="_blank" rel="noreferrer" href="http://forecast.weather.gov/MapClick.php?lat=39.633820&lon=-105.817520">Weather</a></li>
+<li><a href="../php14ers/cellreportmain.php?the14er=110">Cell Phone Reception</a></li>
+<li><a href="../php14ers/ppc.php?peak=Grays+Peak">Peak Planning Console</a></li>
+</ul>
+</div>
+<div class="sidebar_section hide-6">More Photos</div>
+<div class="sidebar_content hide-6">
+<ul class="sectionlist">
+<li><a href="../php14ers/uphotos.php?parmpeak=Grays+Peak&pictype=1">Peak</a></li>
+<li><a href="../php14ers/uphotos.php?parmpeak=Grays+Peak&pictype=13">Aerial Photos</a></li>
+<li><a href="../php14ers/uphotos.php?parmpeak=Grays+Peak&pictype=5">Sunrise and Sunsets</a></li>
+<li><a href="../php14ers/uphotos.php?parmpeak=Grays+Peak&pictype=11">Moon and night sky</a></li>
+<li><a href="../php14ers/uphotos.php?parmpeak=Grays+Peak&pictype=8">Wildflowers, plants, trees</a></li>
+<li><a href="../php14ers/uphotos.php?parmpeak=Grays+Peak&pictype=9">Waterfalls, lakes, rivers</a></li>
+<li><a href="../php14ers/uphotos.php?parmpeak=Grays+Peak&pictype=4">Wildlife in Colorado</a></li>
+<li><a href="../php14ers/uphotos.php?parmpeak=Grays+Peak&pictype=7">Rocks, geology</a></li>
+</ul>
+</div>
+<div class="sidebar_section hide-6">14erology</div>
+<div class="sidebar_content hide-6">
+<ul class="sectionlist">
+<li><a href="../php14ers/historyview.php?parmpeak=Grays Peak&parmpeak2=Torreys Peak&parmcat=Name History">Name History</a></li>
+<li>Climbing History</li>
+<li>Mining</li>
+<li>Geology</li>
+<li>More Information</li>
+</ul>
+<div style="text-align:right;margin-right:10px;"><a target="_blank" href="../php14ers/historyview.php?parmpeak=Grays Peak&parmpeak2=Torreys Peak">View All</a></div>
+<ul style="list-style-type: none;">
+<li><a href="../php14ers/loginviaforum.php?prgm=historyadd&parmpeak=Grays Peak&level=php14ers" title="Add Information (requires login)">Add Information<img src="../images/icon_key_medium.png" style="border:0px;width:14px;height:14px;margin-left:3px;margin-bottom:-2px;"></a></li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+
+
+<div id="tabGroup">
+ <ul id="tabs">
+  <li><a href="#tabs-1"><div>Photos</div></a></li>
+  <li><a id="tabs2-link" href="#tabs-2"><div>Google Map</div></a></li>
+ </ul>
+
+<div id="tabs-1" class="MainText1">
+<div>
+<table class="MainText1" style="height:100%;width:100%;" cellpadding="0" cellspacing="0">
+<tr>
+<td style="padding-top: 5px; padding-left: 5px; padding-right: 5px; padding-bottom: 5px;width:100%; ">
+<div style="float: left; clear: both; padding-bottom: 4px;width:100%;max-width:100%;">
+360&deg; Panorama from the summit of Grays Peak. Click to view pano<br>
+<div style="float:left;position:relative;clear:both;width:100%;max-width:640px;"><span class="mainpicthumb" style="width:100%;"><a href="../php14ers/panoramas.php?parmid=4"><img src="../photos/graystorreys/200506_Grays360_s.jpg" style="width:100%;max-width:100%;"></a></span><br></div>
+</div>
+<div style="float: left; clear: both; padding-bottom: 4px;width:100%;max-width:100%;">
+360&deg; Panorama from the summit of Torreys Peak. Click to view pano<br>
+<div style="float:left;position:relative;clear:both;width:100%;max-width:640px;"><span class="mainpicthumb" style="width:100%;"><a href="../php14ers/panoramas.php?parmid=17"><img src="../photos/graystorreys/200706_Tor360_s.jpg" style="width:100%;max-width:100%;"></a></span><br></div>
+</div>
+
+<div class="picgroup">
+November, 2012:  Grays from 13er Ruby Mountain, looking north.<br>
+<span class="mainpicthumb"><a target="_blank" href="../photos/graystorreys/peakphotos/201211_Grays01.jpg?lu=20180101" data-lightbox="thumbnails" data-title="November, 2012:  Grays from 13er Ruby Mountain, looking north.<br><a class='galleryImage' target='_blank' href='../photos/graystorreys/peakphotos/large/201211_Grays01.jpg?lu=20180101'>View Larger Image&nbsp;&nbsp;<i class='fas fa-external-link-alt'></i></a>"><img src="../photos/graystorreys/peakphotos/thumb/201211_Grays01.jpg?lu=20180101" style="width:350px;max-width:100%;" title="November, 2012:  Grays from 13er Ruby Mountain, looking north." alt="pic"></a></span>
+</div>
+
+<div class="picgroup">
+July, 2012: Torreys and Grays from 13er Santa Fe Peak.<br>
+<span class="mainpicthumb"><a target="_blank" href="../photos/graystorreys/peakphotos/201207_Grays02.jpg?lu=20180101" data-lightbox="thumbnails" data-title="July, 2012: Torreys and Grays from 13er Santa Fe Peak.<br><a class='galleryImage' target='_blank' href='../photos/graystorreys/peakphotos/large/201207_Grays02.jpg?lu=20180101'>View Larger Image&nbsp;&nbsp;<i class='fas fa-external-link-alt'></i></a>"><img src="../photos/graystorreys/peakphotos/thumb/201207_Grays02.jpg?lu=20180101" style="width:350px;max-width:100%;" title="July, 2012: Torreys and Grays from 13er Santa Fe Peak." alt="pic"></a></span>
+</div>
+
+<div class="picgroup">
+January, 2012:  Grays, Torreys and 13er Mt. Edwards (right) from 13er Mt. Wilcox.<br>
+<span class="mainpicthumb"><a target="_blank" href="../photos/graystorreys/peakphotos/201201_Grays01.jpg?lu=20180101" data-lightbox="thumbnails" data-title="January, 2012:  Grays, Torreys and 13er Mt. Edwards (right) from 13er Mt. Wilcox.<br><a class='galleryImage' target='_blank' href='../photos/graystorreys/peakphotos/large/201201_Grays01.jpg?lu=20180101'>View Larger Image&nbsp;&nbsp;<i class='fas fa-external-link-alt'></i></a>"><img src="../photos/graystorreys/peakphotos/thumb/201201_Grays01.jpg?lu=20180101" style="width:400px;max-width:100%;" title="January, 2012:  Grays, Torreys and 13er Mt. Edwards (right) from 13er Mt. Wilcox." alt="pic"></a></span>
+</div>
+
+<div class="picgroup">
+April, 2010:  Grays and Torreys from Stevens Gulch.<br>
+<span class="mainpicthumb"><a target="_blank" href="../photos/graystorreys/peakphotos/201004_Grays01.jpg?lu=20180101" data-lightbox="thumbnails" data-title="April, 2010:  Grays and Torreys from Stevens Gulch.<br><a class='galleryImage' target='_blank' href='../photos/graystorreys/peakphotos/large/201004_Grays01.jpg?lu=20180101'>View Larger Image&nbsp;&nbsp;<i class='fas fa-external-link-alt'></i></a>"><img src="../photos/graystorreys/peakphotos/thumb/201004_Grays01.jpg?lu=20180101" style="width:350px;max-width:100%;" title="April, 2010:  Grays and Torreys from Stevens Gulch." alt="pic"></a></span>
+</div>
+
+<div class="picgroup">
+March, 2008: Grays seen from Horseshoe Basin<br>
+<span class="mainpicthumb"><a target="_blank" href="../photos/graystorreys/peakphotos/200803_Grays01.jpg?lu=20180101" data-lightbox="thumbnails" data-title="March, 2008: Grays seen from Horseshoe Basin<br><a class='galleryImage' target='_blank' href='../photos/graystorreys/peakphotos/large/200803_Grays01.jpg?lu=20180101'>View Larger Image&nbsp;&nbsp;<i class='fas fa-external-link-alt'></i></a>"><img src="../photos/graystorreys/peakphotos/thumb/200803_Grays01.jpg?lu=20180101" style="width:300px;max-width:100%;" title="March, 2008: Grays seen from Horseshoe Basin" alt="pic"></a></span>
+</div>
+
+<div class="picgroup">
+October, 2007: Grays and Torreys seen from 13er Mt. Edwards.<br>
+<span class="mainpicthumb"><a target="_blank" href="../photos/graystorreys/peakphotos/200710_GraTor01.jpg?lu=20180101" data-lightbox="thumbnails" data-title="October, 2007: Grays and Torreys seen from 13er Mt. Edwards.<br><a class='galleryImage' target='_blank' href='../photos/graystorreys/peakphotos/large/200710_GraTor01.jpg?lu=20180101'>View Larger Image&nbsp;&nbsp;<i class='fas fa-external-link-alt'></i></a>"><img src="../photos/graystorreys/peakphotos/thumb/200710_GraTor01.jpg?lu=20180101" style="width:300px;max-width:100%;" title="October, 2007: Grays and Torreys seen from 13er Mt. Edwards." alt="pic"></a></span>
+</div>
+
+<div class="picgroup">
+June, 2007:  Grays seen from Stevens Gulch.<br>
+<span class="mainpicthumb"><a target="_blank" href="../photos/graystorreys/peakphotos/200706_Grays01.jpg?lu=20180101" data-lightbox="thumbnails" data-title="June, 2007:  Grays seen from Stevens Gulch.<br><a class='galleryImage' target='_blank' href='../photos/graystorreys/peakphotos/large/200706_Grays01.jpg?lu=20180101'>View Larger Image&nbsp;&nbsp;<i class='fas fa-external-link-alt'></i></a>"><img src="../photos/graystorreys/peakphotos/thumb/200706_Grays01.jpg?lu=20180101" style="width:300px;max-width:100%;" title="June, 2007:  Grays seen from Stevens Gulch." alt="pic"></a></span>
+</div>
+
+<div class="picgroup">
+June, 2007:  Torreys seen from the Grays-Torreys saddle.<br>
+<span class="mainpicthumb"><a target="_blank" href="../photos/graystorreys/peakphotos/200706_Tor01.jpg?lu=20180101" data-lightbox="thumbnails" data-title="June, 2007:  Torreys seen from the Grays-Torreys saddle.<br><a class='galleryImage' target='_blank' href='../photos/graystorreys/peakphotos/large/200706_Tor01.jpg?lu=20180101'>View Larger Image&nbsp;&nbsp;<i class='fas fa-external-link-alt'></i></a>"><img src="../photos/graystorreys/peakphotos/thumb/200706_Tor01.jpg?lu=20180101" style="width:300px;max-width:100%;" title="June, 2007:  Torreys seen from the Grays-Torreys saddle." alt="pic"></a></span>
+</div>
+
+<div class="picgroup">
+May, 2006: Torreys and Grays seen during a climb of Grizzly Peak (13,427`).<br>
+<span class="mainpicthumb"><a target="_blank" href="../photos/graystorreys/peakphotos/200605_GraTor01.jpg?lu=20180101" data-lightbox="thumbnails" data-title="May, 2006: Torreys and Grays seen during a climb of Grizzly Peak (13,427`).<br><a class='galleryImage' target='_blank' href='../photos/graystorreys/peakphotos/large/200605_GraTor01.jpg?lu=20180101'>View Larger Image&nbsp;&nbsp;<i class='fas fa-external-link-alt'></i></a>"><img src="../photos/graystorreys/peakphotos/thumb/200605_GraTor01.jpg?lu=20180101" style="width:250px;max-width:100%;" title="May, 2006: Torreys and Grays seen during a climb of Grizzly Peak (13,427`)." alt="pic"></a></span>
+</div>
+
+<div class="picgroup">
+August, 2005:  Grays and Torreys seen from Stevens Gulch.<br>
+<span class="mainpicthumb"><a target="_blank" href="../photos/graystorreys/peakphotos/200508_GraTor01.jpg?lu=20180101" data-lightbox="thumbnails" data-title="August, 2005:  Grays and Torreys seen from Stevens Gulch.<br><a class='galleryImage' target='_blank' href='../photos/graystorreys/peakphotos/large/200508_GraTor01.jpg?lu=20180101'>View Larger Image&nbsp;&nbsp;<i class='fas fa-external-link-alt'></i></a>"><img src="../photos/graystorreys/peakphotos/thumb/200508_GraTor01.jpg?lu=20180101" style="width:200px;max-width:100%;" title="August, 2005:  Grays and Torreys seen from Stevens Gulch." alt="pic"></a></span>
+</div>
+
+<div class="picgroup">
+June, 2005:  Early light on Grays (left) and Torreys - seen from Stevens Gulch.<br>
+<span class="mainpicthumb"><a target="_blank" href="../photos/graystorreys/peakphotos/200506_GraTor01.jpg?lu=20180101" data-lightbox="thumbnails" data-title="June, 2005:  Early light on Grays (left) and Torreys - seen from Stevens Gulch.<br><a class='galleryImage' target='_blank' href='../photos/graystorreys/peakphotos/large/200506_GraTor01.jpg?lu=20180101'>View Larger Image&nbsp;&nbsp;<i class='fas fa-external-link-alt'></i></a>"><img src="../photos/graystorreys/peakphotos/thumb/200506_GraTor01.jpg?lu=20180101" style="width:200px;max-width:100%;" title="June, 2005:  Early light on Grays (left) and Torreys - seen from Stevens Gulch." alt="pic"></a></span>
+</div>
+
+<div class="picgroup">
+June, 2005:  A closer look at Torreys from Stevens Gulch.<br>
+<span class="mainpicthumb"><a target="_blank" href="../photos/graystorreys/peakphotos/200506_Tor01.jpg?lu=20180101" data-lightbox="thumbnails" data-title="June, 2005:  A closer look at Torreys from Stevens Gulch.<br><a class='galleryImage' target='_blank' href='../photos/graystorreys/peakphotos/large/200506_Tor01.jpg?lu=20180101'>View Larger Image&nbsp;&nbsp;<i class='fas fa-external-link-alt'></i></a>"><img src="../photos/graystorreys/peakphotos/thumb/200506_Tor01.jpg?lu=20180101" style="width:200px;max-width:100%;" title="June, 2005:  A closer look at Torreys from Stevens Gulch." alt="pic"></a></span>
+</div>
+
+<div class="picgroup">
+June, 2005:  Grays and Torreys from the summit of Mt. Bierstadt.<br>
+<span class="mainpicthumb"><a target="_blank" href="../photos/graystorreys/peakphotos/200506_GraTor02.jpg?lu=20180101" data-lightbox="thumbnails" data-title="June, 2005:  Grays and Torreys from the summit of Mt. Bierstadt.<br><a class='galleryImage' target='_blank' href='../photos/graystorreys/peakphotos/large/200506_GraTor02.jpg?lu=20180101'>View Larger Image&nbsp;&nbsp;<i class='fas fa-external-link-alt'></i></a>"><img src="../photos/graystorreys/peakphotos/thumb/200506_GraTor02.jpg?lu=20180101" style="width:89px;max-width:100%;" title="June, 2005:  Grays and Torreys from the summit of Mt. Bierstadt." alt="pic"></a></span>
+<span class="mainpicthumb"><a target="_blank" href="../photos/graystorreys/peakphotos/200506_GraTor03.jpg?lu=20180101" data-lightbox="thumbnails" data-title="June, 2005:  Grays and Torreys from the summit of Mt. Bierstadt.<br><a class='galleryImage' target='_blank' href='../photos/graystorreys/peakphotos/large/200506_GraTor03.jpg?lu=20180101'>View Larger Image&nbsp;&nbsp;<i class='fas fa-external-link-alt'></i></a>"><img src="../photos/graystorreys/peakphotos/thumb/200506_GraTor03.jpg?lu=20180101" style="width:89px;max-width:100%;" title="June, 2005:  Grays and Torreys from the summit of Mt. Bierstadt." alt="pic"></a></span>
+<span class="mainpicthumb"><a target="_blank" href="../photos/graystorreys/peakphotos/200506_GraTor04.jpg?lu=20180101" data-lightbox="thumbnails" data-title="June, 2005:  Grays and Torreys from the summit of Mt. Bierstadt.<br><a class='galleryImage' target='_blank' href='../photos/graystorreys/peakphotos/large/200506_GraTor04.jpg?lu=20180101'>View Larger Image&nbsp;&nbsp;<i class='fas fa-external-link-alt'></i></a>"><img src="../photos/graystorreys/peakphotos/thumb/200506_GraTor04.jpg?lu=20180101" style="width:89px;max-width:100%;" title="June, 2005:  Grays and Torreys from the summit of Mt. Bierstadt." alt="pic"></a></span>
+</div>
+
+<div class="picgroup">
+June, 2005:  Torreys from the Bakerville exit on I-70.<br>
+<span class="mainpicthumb"><a target="_blank" href="../photos/graystorreys/peakphotos/200506_Tor02.jpg?lu=20180101" data-lightbox="thumbnails" data-title="June, 2005:  Torreys from the Bakerville exit on I-70.<br><a class='galleryImage' target='_blank' href='../photos/graystorreys/peakphotos/large/200506_Tor02.jpg?lu=20180101'>View Larger Image&nbsp;&nbsp;<i class='fas fa-external-link-alt'></i></a>"><img src="../photos/graystorreys/peakphotos/thumb/200506_Tor02.jpg?lu=20180101" style="width:89px;max-width:100%;" title="June, 2005:  Torreys from the Bakerville exit on I-70." alt="pic"></a></span>
+<span class="mainpicthumb"><a target="_blank" href="../photos/graystorreys/peakphotos/200506_Tor03.jpg?lu=20180101" data-lightbox="thumbnails" data-title="June, 2005:  Torreys from the Bakerville exit on I-70.<br><a class='galleryImage' target='_blank' href='../photos/graystorreys/peakphotos/large/200506_Tor03.jpg?lu=20180101'>View Larger Image&nbsp;&nbsp;<i class='fas fa-external-link-alt'></i></a>"><img src="../photos/graystorreys/peakphotos/thumb/200506_Tor03.jpg?lu=20180101" style="width:89px;max-width:100%;" title="June, 2005:  Torreys from the Bakerville exit on I-70." alt="pic"></a></span>
+<span class="mainpicthumb"><a target="_blank" href="../photos/graystorreys/peakphotos/200506_Tor04.jpg?lu=20180101" data-lightbox="thumbnails" data-title="June, 2005:  Torreys from the Bakerville exit on I-70.<br><a class='galleryImage' target='_blank' href='../photos/graystorreys/peakphotos/large/200506_Tor04.jpg?lu=20180101'>View Larger Image&nbsp;&nbsp;<i class='fas fa-external-link-alt'></i></a>"><img src="../photos/graystorreys/peakphotos/thumb/200506_Tor04.jpg?lu=20180101" style="width:89px;max-width:100%;" title="June, 2005:  Torreys from the Bakerville exit on I-70." alt="pic"></a></span>
+</div>
+
+<div class="picgroup">
+May, 2005:  Grays (left) and Torreys behind the The Sawtooth - taken from Mt. Evans.<br>
+<span class="mainpicthumb"><a target="_blank" href="../photos/graystorreys/peakphotos/200505_GraTor01.jpg?lu=20180101" data-lightbox="thumbnails" data-title="May, 2005:  Grays (left) and Torreys behind the The Sawtooth - taken from Mt. Evans.<br><a class='galleryImage' target='_blank' href='../photos/graystorreys/peakphotos/large/200505_GraTor01.jpg?lu=20180101'>View Larger Image&nbsp;&nbsp;<i class='fas fa-external-link-alt'></i></a>"><img src="../photos/graystorreys/peakphotos/thumb/200505_GraTor01.jpg?lu=20180101" style="width:200px;max-width:100%;" title="May, 2005:  Grays (left) and Torreys behind the The Sawtooth - taken from Mt. Evans." alt="pic"></a></span>
+</div>
+
+<div class="picgroup">
+August, 2002:  Grays and Torreys seen from Mt. Parnasus.<br>
+<span class="mainpicthumb"><a target="_blank" href="../photos/graystorreys/peakphotos/200208_GraTor01.jpg?lu=20180101" data-lightbox="thumbnails" data-title="August, 2002:  Grays and Torreys seen from Mt. Parnasus.<br><a class='galleryImage' target='_blank' href='../photos/graystorreys/peakphotos/large/200208_GraTor01.jpg?lu=20180101'>View Larger Image&nbsp;&nbsp;<i class='fas fa-external-link-alt'></i></a>"><img src="../photos/graystorreys/peakphotos/thumb/200208_GraTor01.jpg?lu=20180101" style="width:89px;max-width:100%;" title="August, 2002:  Grays and Torreys seen from Mt. Parnasus." alt="pic"></a></span>
+<span class="mainpicthumb"><a target="_blank" href="../photos/graystorreys/peakphotos/200208_GraTor02.jpg?lu=20180101" data-lightbox="thumbnails" data-title="August, 2002:  Grays and Torreys seen from Mt. Parnasus.<br><a class='galleryImage' target='_blank' href='../photos/graystorreys/peakphotos/large/200208_GraTor02.jpg?lu=20180101'>View Larger Image&nbsp;&nbsp;<i class='fas fa-external-link-alt'></i></a>"><img src="../photos/graystorreys/peakphotos/thumb/200208_GraTor02.jpg?lu=20180101" style="width:89px;max-width:100%;" title="August, 2002:  Grays and Torreys seen from Mt. Parnasus." alt="pic"></a></span>
+<span class="mainpicthumb"><a target="_blank" href="../photos/graystorreys/peakphotos/200208_GraTor03.jpg?lu=20180101" data-lightbox="thumbnails" data-title="August, 2002:  Grays and Torreys seen from Mt. Parnasus.<br><a class='galleryImage' target='_blank' href='../photos/graystorreys/peakphotos/large/200208_GraTor03.jpg?lu=20180101'>View Larger Image&nbsp;&nbsp;<i class='fas fa-external-link-alt'></i></a>"><img src="../photos/graystorreys/peakphotos/thumb/200208_GraTor03.jpg?lu=20180101" style="width:89px;max-width:100%;" title="August, 2002:  Grays and Torreys seen from Mt. Parnasus." alt="pic"></a></span>
+</div>
+
+<div class="picgroup">
+July, 1999:  Grays and Torreys seen during a hike to the Grays summit.<br>
+<span class="mainpicthumb"><a target="_blank" href="../photos/graystorreys/peakphotos/199907_GraTor01.jpg?lu=20180101" data-lightbox="thumbnails" data-title="July, 1999:  Grays and Torreys seen during a hike to the Grays summit.<br><a class='galleryImage' target='_blank' href='../photos/graystorreys/peakphotos/large/199907_GraTor01.jpg?lu=20180101'>View Larger Image&nbsp;&nbsp;<i class='fas fa-external-link-alt'></i></a>"><img src="../photos/graystorreys/peakphotos/thumb/199907_GraTor01.jpg?lu=20180101" style="width:103px;max-width:100%;" title="July, 1999:  Grays and Torreys seen during a hike to the Grays summit." alt="pic"></a></span>
+<span class="mainpicthumb"><a target="_blank" href="../photos/graystorreys/peakphotos/199907_GraTor02.jpg?lu=20180101" data-lightbox="thumbnails" data-title="July, 1999:  Grays and Torreys seen during a hike to the Grays summit.<br><a class='galleryImage' target='_blank' href='../photos/graystorreys/peakphotos/large/199907_GraTor02.jpg?lu=20180101'>View Larger Image&nbsp;&nbsp;<i class='fas fa-external-link-alt'></i></a>"><img src="../photos/graystorreys/peakphotos/thumb/199907_GraTor02.jpg?lu=20180101" style="width:103px;max-width:100%;" title="July, 1999:  Grays and Torreys seen during a hike to the Grays summit." alt="pic"></a></span>
+<span class="mainpicthumb"><a target="_blank" href="../photos/graystorreys/peakphotos/199907_GraTor03.jpg?lu=20180101" data-lightbox="thumbnails" data-title="July, 1999:  Grays and Torreys seen during a hike to the Grays summit.<br><a class='galleryImage' target='_blank' href='../photos/graystorreys/peakphotos/large/199907_GraTor03.jpg?lu=20180101'>View Larger Image&nbsp;&nbsp;<i class='fas fa-external-link-alt'></i></a>"><img src="../photos/graystorreys/peakphotos/thumb/199907_GraTor03.jpg?lu=20180101" style="width:102px;max-width:100%;" title="July, 1999:  Grays and Torreys seen during a hike to the Grays summit." alt="pic"></a></span>
+</div>
+</td>
+</tr>
+</table>
+<span class="CopyR1">All images &copy;Copyright 14ers.com, see link below.</span>
+</div>
+</div>
+
+<div id="tabs-2" class="MainText1">
+<br>This map can only be accessed by registered, 14ers.com users. If you don't have an account, you can register in the <a href="/phpBB3/index.php">forum</a>.<br><br>
+<a href="/php14ers/loginviaforum.php?prgm=photos_14ers1&level=photos" title="Log In" class="buttonf orangef">Log In<img src="/images/icon_key_medium.png" style="border:0px;width:18px;height:18px;margin-left:0px;margin-bottom:-3px;"></a></a>
+</div>
+</div>
+
+</div>
+
+
+
+<br>
+<br>
+<br>
+<div class="push"></div>
+</div>
+
+
+
+ <div style="width:100%;clear:both;"></div>
+<div class="footbar">
+ <div class="sociallinks" style="width:100%;text-align:center;clear:both;"><span class="textContrast1" style="padding:11px 2px 7px 2px;"><a target="_blank" href="https://www.facebook.com/groups/82338447841/" class="maintainColor" title="14ers.com Facebook Group" rel="noopener"><span class="fab fa-facebook-square fa-lg"></span></a></span>&nbsp;&nbsp;<span class="textContrast1" style="padding:11px 2px 7px 2px;"><a target="_blank" href="https://www.instagram.com/14erscom" class="maintainColor" title="14ers.com on Instagram" rel="noopener"><span class="fab fa-instagram fa-lg"></span></a></span>
+ </div>
+<div class="footbar_copy"><a href="/disclaim.php">&copy; 2019 14ers.com<sup>&reg;</sup></a>, 14ers Inc.</div></div>
+
+</body>
+</html>

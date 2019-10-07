@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>14ers.com &bull; Home of Colorado's Fourteeners and High Peaks</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="Description" content="Formed in 2000 by Breckenridge, Colorado resident Bill Middlebrook, 14ers.com is the premier resource for climbing the high peaks in Colorado. The mission of 14ers.com is to provide free access to peak information, photos, climbing routes and an active forum, all in an open environment that's easy to use.">
+<meta name="keywords" content="14ers, Colorado Fourteeners, Colorado 14ers, Fourteeners, 14ers, 14er, 14er Routes, 14er Hiking Routes, Colorado Thirteeners, Thirteeners, Colorado 13ers, 13ers, 13er, Colorado Summits, Colorado Peaks, Colorado Mountains, Climbing Routes, 14er Ski Routes, 14er skiing, 14er ski, Fourteen Thousand Foot Peaks, Fourteen Thousand Feet, Colorado Nature, Colorado View, Colorado Photos, Scenic Colorado, Colorado Mountains, Colorado, Bill Middlebrook, Middlebrook">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+<meta name="copyright" content="14ers.com">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="stylesheet" type="text/css" href="/css/fontawesome-v5.8.1/css/all.css">
+<link rel="stylesheet" type="text/css" href="/css/site.css?date=20190620">
+<link rel="stylesheet" type="text/css" href="/css/sitecolors_std.css?date=20190620">
+<link rel="stylesheet" type="text/css" href="/scripts/jquery/jquery-ui-1.12.1/jquery-ui.min.css?date=20190331">
+<link rel="stylesheet" type="text/css" href="/css/jquery_uioverrides.css?date=20190331">
+<link rel="stylesheet" type="text/css" href="/css/csspopup.css?date=20190331">
+<link rel="stylesheet" type="text/css" href="/css/homeindex_main.css?date=20190331">
+<script type="text/javascript" src="/scripts/cookwork.js"></script>
+<script type="text/javascript" src="/scripts/jquery/jquery-3.3.1.min.js?date=20190331"></script>
+<script type="text/javascript" src="/scripts/jquery/jquery-ui-1.12.1/jquery-ui.min.js?date=20190331"></script>
+<script type="text/javascript">
+	var jqy = jQuery.noConflict();
+</script>
+</head>
+
+<body class="MainText1">
+
+<script type="text/javascript">
+
+jqy( document ).ready(function() {
+	jqy('#sitemenu-compact > ul > li > a').click(function() {
+		jqy('#sitemenu-compact li').removeClass('active');
+		jqy(this).closest('li').addClass('active');	
+		var checkElement = jqy(this).next();
+		if((checkElement.is('ul')) && (checkElement.is(':visible'))) {
+		 jqy(this).closest('li').removeClass('active');
+		 checkElement.slideUp('normal');
+		}
+		if((checkElement.is('ul')) && (!checkElement.is(':visible'))) {
+		 jqy('#sitemenu-compact ul ul:visible').slideUp('normal');
+		 checkElement.slideDown('normal');
+		}
+		if(jqy(this).closest('li').find('ul').children().length == 0) {
+		 return true;
+		} else {
+		 return false;	
+		}		
+	});
+	jqy('body').bind('touchstart', function() {});
+});
+
+function menuExpand() {
+	jqy('#compactmenu').css("display","block");
+	jqy("#hamburger").attr("onclick","menuClose()");
+	jqy('#hamburger').addClass('open');
+	jqy('html, body').animate({ scrollTop: 0 }, 'fast');
+}
+
+function menuClose() {
+	jqy('#compactmenu').css("display","none");
+	jqy('#hamburger').removeClass('open');
+	jqy("#hamburger").attr("onclick","menuExpand()");
+}
+	
+</script>
+
+
+<div id="siteheader">
+  <div id="siteheader-logo">
+   <a target="_top" href="/" title="14ers.com Home"><img src="/images/site_logomain_300x116.png" alt="logo"></a>
+  </div>
+
+  <div id="hamburger" class="hamburger-menu" onclick="menuExpand();return false">
+   <span></span><span></span><span></span>
+  </div>
+
+  <div id="siteheader-login">
+   <a href="/php14ers/loginviaforum.php" class="maincolor" style="margin-right:20px;" title="Log In">Log In&nbsp;<span class="fas fa-sign-in-alt"></span></a>
+  </div>
+
+  <div id="siteheader-iconlinks">
+   <a href="/search.php" class="maincolor" title="Search"><span class="fas fa-search"></span></a>
+  </div>
+
+  <div id="siteheader-menuwrap">
+   <ul id="sitemenu">
+	<li><a class="menu_topitem" href="/photos/photos_14ers1.php">Peaks</a>
+	<ul class="menu_bottomitems">
+		<li><a class="strong" target="_top" href="/photos/photos_14ers1.php">14ers</a></li>
+		<li><a target="_top" href="/php14ers/panoramas.php">360&deg; Summit Panoramas</a></li>
+		<li><a target="_top" href="/php14ers/mileage.php">Peak-to-Peak Mileage Chart</a></li>
+		<li class="sep"></li>
+		<li><a class="strong" target="_top" href="/13ers/13ers.php?displaytype=0&sublist=13ers&listd=list">13ers</a></li>
+        <li><a target="_top" href="/php14ers/panoramas.php?type=13ers">360&deg; Summit Panoramas</a></li>
+		<li class="sep"></li>
+		<li><a target="_top" href="/map.php">Map</a></li>
+		<li><a target="_top" href="/php14ers/exportpeaks.php">Export Peak Names to File</a></li>
+	</ul>
+	</li>
+	<li><a class="menu_topitem" href="/routes.php">Routes</a>
+	<ul class="menu_bottomitems">
+		<li><a class="strong" target="_top" href="/routes.php">14er Route Descriptions</a></li>
+		<li><a target="_top" href="/php14ers/routeselector.php">Route Selection Tool</a></li>
+		<li><a target="_top" href="/routes_bydifficulty.php">Routes by Difficulty</a></li>
+		<li><a target="_top" href="/routes_byriskfactor.php">Routes by Risk Factor</a></li>
+		<li><a target="_top" href="/php14ers/timesmain.php">User Climb Times</a></li>
+        <li><a target="_top" href="/php14ers/gps_downloads.php">.GPX & .KML Route Files</a></li>
+        <li><a target="_top" href="/php14ers/googleearth_peaksandroutes.php">Google Earth Master File</a></li>
+		<li><a target="_top" href="/php14ers/cellreportmain.php">Cell Phone Reception on Summits</a></li>
+		<li><a target="_top" href="/php14ers/peakusage.php">Crowds</a></li>
+		<li class="sep"></li>
+		<li><a class="strong" target="_top" href="/13ers/13ers.php?displaytype=0&sublist=13ers&listd=list">13er Route Descriptions</a></li>
+		<li class="sep"></li>
+		<li><a target="_top" href="/safety.php">Mountaineering Safety</a></li>
+		<li><a target="_blank" href="http://www.lnt.org/programs/principles.php" rel="noopener">Leave no Trace (LNT)</a></li>
+        <li><a target="_top" href="/forum/viewtopic.php?t=15348">14er FAQ</a></li>
+		<li><a target="_top" href="/difficultyratings.php">Difficulty Rating System</a></li>
+		<li><a target="_top" href="/php14ers/routeselector.php?diff=Class+1">Easiest 14er Hikes</a></li>
+		<li><a target="_top" href="/gearlist.php">Gear List</a></li>
+		<li><a target="_top" href="/php14ers/topomaps.php">Topo Maps</a></li>
+		<li><a target="_top" href="/sunchart.php">Sunrise/Sunset Chart</a></li>
+	</ul>
+	</li>
+	<li><a class="menu_topitem" style="" href="/php14ers/peakstatus_main.php">Peak Conditions</a>
+	<ul class="menu_bottomitems">
+		<li><a class="strong" target="_top" href="/php14ers/peakstatus_main.php">View Peak Condition Reports</a></li>
+		<li><a target="_top" href="/php14ers/peakstatus_add.php">Add a Condition Report</a></li>
+	</ul>
+	</li>
+    <li><a class="menu_topitem" href="/php14ers/tripmain.php">Trip Reports</a>
+	<ul class="menu_bottomitems">
+		<li><a class="strong" target="_top" href="/php14ers/tripmain.php">View Trip Reports</a></li>	
+		<li><a target="_top" href="/php14ers/addreport.php">Add a Trip Report</a></li>
+	</ul>
+	</li>
+	<li><a class="menu_topitem" href="/php14ers/trailheadsmain.php">Trailheads</a>
+	<ul class="menu_bottomitems">
+		<li><a class="strong" target="_top" href="/php14ers/trailheadsmain.php">View Trailheads</a></li>	
+		<li><a target="_top" href="/php14ers/threportadd.php">Add a Trailhead Status Report</a></li>	
+        <li class="sep"></li>
+		<li><a target="_top" href="/php14ers/cellreportmain.php">Update TH Cell Phone Reception</a></li>
+		<li><a target="_top" href="/php14ers/trailheads_bydifficulty.php">14er THs by Road Difficulty</a></li>	
+		<li><a target="_top" href="/map.php?trailheads=yes">14er THs on Map</a></li>	
+	</ul>
+	</li>
+    <li><a class="menu_topitem" style="" href="/php14ers/weather.php">Weather</a>
+	<ul class="menu_bottomitems">
+		<li><a class="strong" target="_top" href="/php14ers/weather.php">Peak Forecasts</a></li>
+        <li><a target="_blank" href="https://www.wunderground.com/wundermap/?lat=39.04157&lon=-106.09080" rel="noopener">WunderMap<img src="/images/icon_globe_medium.png" alt="link" class="picglobe"></a></li>
+		<li><a target="_blank" href="http://www.cotrip.org/roadConditions.htm" rel="noopener">Road Conditions (CDOT)<img src="/images/icon_globe_medium.png" alt="link" class="picglobe"></a></li>
+		<li><a target="_blank" href="http://www.weather.gov/sat_tab.php?image=ir" rel="noopener">NOAA Satellite Imagery<img src="/images/icon_globe_medium.png" class="picglobe"></a></li>
+		<li><a target="_blank" href="http://www.weather.gov/outlook_tab.php" rel="noopener">NOAA National Maps<img src="/images/icon_globe_medium.png" alt="link" class="picglobe"></a></li>
+		<li><a target="_blank" href="http://www.nws.noaa.gov/nwr/coverage/stations.php?State=CO" rel="noopener">NOAA Radio Stations<img src="/images/icon_globe_medium.png" alt="link" class="picglobe"></a></li>
+        <li><a target="_blank" href="http://www.nohrsc.noaa.gov/interactive/html/map.html?ql=station&zoom=&zoom4.x=11&zoom4.y=7&loc=Latitude%2CLongitude%3B+City%2CST%3B+or+Station+ID&var=ssm_depth&snap=1&o9=1&o12=1&o13=1&lbl=m&mode=pan&extents=us&min_x=-106.90833333333&min_y=37.766666666663&max_x=-103.15&max_y=39.883333333329&coord_x=-105.029166666665&coord_y=38.824999999995995&zbox_n=&zbox_s=&zbox_e=&zbox_w=&metric=0&bgvar=dem&shdvar=shading&width=800&height=450&nw=800&nh=450&h_o=0&font=0&js=1&uc=0" rel="noopener">NOAA Snow Level Info<img src="/images/icon_globe_medium.png" alt="link" class="picglobe"></a></li>
+		<li><a target="_blank" href="http://www.wcc.nrcs.usda.gov/ftpref/data/water/wcs/gis/maps/co_swepctnormal_update.pdf" rel="noopener">CO Snow % of Normal<img src="/images/icon_globe_medium.png" alt="link" class="picglobe"></a></li>
+		<li><a target="_blank" href="http://www.wcc.nrcs.usda.gov/ftpref/data/water/wcs/basinsweplots/co/basinplotco19.gif?" rel="noopener">CO Snow Line Graph<img src="/images/icon_globe_medium.png" alt="link" class="picglobe"></a></li>
+	</ul>
+	</li>
+	<li><a class="menu_topitem" href="/php14ers/usrchecklists.php">Checklists</a>
+	<ul class="menu_bottomitems">
+		<li><a target="_top" href="/php14ers/usrpeaksvall.php?peaktype=14ers">14er User Checklists</a></li>
+		<li><a target="_top" href="/php14ers/usrpeaksvall.php?peaktype=13ers">13er User Checklists</a></li>
+        <li><a target="_top" href="/php14ers/usrpeaksstat.php">Checklist Statistics</a></li>
+	</ul>
+	</li>
+	<li><a class="menu_topitem" href="/php14ers/gearmain.php">Swap/Shop</a>
+	<ul class="menu_bottomitems">
+		<li><a class="strong"  target="_top" href="/php14ers/gearmain.php">Gear Swap</a></li>
+		<li><a target="_top" href="/php14ers/store.php">14ers.com Store (closed)</a></li>
+        <li><a target="_top" href="/mobileapp.php">14ers.com Free Mobile App</a></li>
+		<li class="sep"></li>
+		<li><a target="_blank" href="http://www.avantlink.com/click.php?tt=ml&ti=3402&pw=55331" rel="noopener">REI.com<img src="/images/icon_globe_medium.png" alt="link" class="picglobe"></a></li>
+		<li><a target="_blank" href="http://www.tkqlhce.com/click-1661703-10281785?url=http://www.backcountry.com" rel="noopener">Backcountry.com<img src="/images/icon_globe_medium.png" alt="link" class="picglobe"></a></li>
+		<li><a target="_blank" href="http://www.steepandcheap.com/?AID=10281785&PID=1661703&SID=undefined" rel="noopener">SteepAndCheap.com<img src="/images/icon_globe_medium.png" alt="link" class="picglobe"></a></li>
+		<li><a target="_blank" href="http://www.avantlink.com/click.php?tt=ml&ti=47621&pw=55331" rel="noopener">SierraTradingPost.com<img src="/images/icon_globe_medium.png" alt="link" class="picglobe"></a></li>
+		<li><a target="_blank" href="http://www.avantlink.com/click.php?tt=ml&ti=160445&pw=55331" rel="noopener">Bent Gate Mountaineering<img src="/images/icon_globe_medium.png" alt="link" class="picglobe"></a></li>
+        <li class="sep"></li>
+        <li><a target="_blank" href="https://14ersmaps.com/" rel="noopener">14erMaps.com<img src="/images/icon_globe_medium.png" alt="link" class="picglobe"></a></li>
+        <li><a target="_blank" href="http://www.peakmarker.com" rel="noopener">Peakmarker.com<img src="/images/icon_globe_medium.png" alt="link" class="picglobe"></a></li>
+             
+    </ul>
+	</li>
+	<li><a class="menu_topitem" href="/forum/index.php">Forum</a>
+	<ul class="menu_bottomitems">
+		<li><a class="strong" target="_top" href="/forum/index.php">Enter the Forum</a></li>
+		<li class="sep"></li>
+		<li><a target="_top" href="/php14ers/uphotosall.php">User Photos: By Category</a></li>
+		<li><a target="_top" href="/php14ers/uphotos.php">User Photos: Recent Uploads</a></li>
+		<li><a target="_top" href="/php14ers/uploadimage.php">User Photos: Upload Photo(s)</a></li>
+	</ul>
+	</li>
+	<li><a class="menu_topitem" href="#">More...</a>
+	<ul class="menu_bottomitems menu_bottomitems_end">
+	    <li><a target="_top" href="/about.php">About 14ers.com</a></li>
+		<li><a target="_top" href="/search.php">Search Site</a></li>
+        <li><a target="_top" href="/links.php">Links</a></li>
+		<li><a target="_top" href="/support.php">Support 14ers.com</a></li>
+		<li><a target="_top" href="/php14ers/emailadmin.php">Contact Site Admin</a></li>
+        <li><a target="_blank" href="https://www.instagram.com/14erscom/" rel="noopener">14ers.com on Instagram<img src="/images/icon_globe_medium.png" alt="link" class="picglobe"></a></li>
+		<li><a target="_blank" href="https://www.facebook.com/groups/82338447841/" rel="noopener">14ers.com on Facebook<img src="/images/icon_globe_medium.png" alt="link" class="picglobe"></a></li>
+	</ul>
+	</li>
+   </ul>
+  </div>
+
+  <div id="compactmenu">
+   <div id="sitemenu-compact">
+    <ul>
+        <li class="has-sub"><a href="#"><span>Peaks</span></a>
+        <ul class="menu_bottomitems">
+            <li><a target="_top" href="/photos/photos_14ers1.php">14ers</a></li>
+            <li><a target="_top" href="/13ers/13ers.php?displaytype=0&sublist=13ers&listd=list">13ers</a></li>
+            <li><a target="_top" href="/php14ers/panoramas.php?type=14ers">360&deg; Summit Panoramas</a></li>
+            <li><a target="_top" href="/map.php">Map</a></li>
+        </ul>
+        </li>
+        <li class="has-sub"><a href="#"><span>Routes</span></a>
+        <ul class="menu_bottomitems">
+            <li><a target="_top" href="/routes.php"><strong>14er</strong> Routes</a></li>
+            <li><a target="_top" href="/php14ers/routeselector.php">Route Selection Tool</a></li>
+            <li><a target="_top" href="/routes_bydifficulty.php">Routes by Difficulty</a></li>
+            <li><a target="_top" href="/routes_byriskfactor.php">Routes by Risk Factor</a></li>
+            <li><a target="_top" href="/php14ers/timesmain.php">User Climb Times</a></li>
+            <li><a target="_top" href="/php14ers/routeselector.php?diff=Class+1">Easiest 14er Hikes</a></li>
+            <li><a target="_top" href="/php14ers/cellreportmain.php">Cell Phone Reception</a></li>
+            <li><a target="_top" href="/13ers/13ers.php?displaytype=0&sublist=13ers&listd=list"><strong>13er</strong> Routes</a></li>
+            <li><a target="_top" href="/safety.php">Mountaineering Safety</a></li>
+            <li><a target="_top" href="/difficultyratings.php">Difficulty Rating System</a></li>
+            <li><a target="_top" href="/gearlist.php">Gear List</a></li>
+        </ul>
+        </li>
+        <li class="has-sub"><a href="#"><span>Peak Conditions</span></a>
+        <ul class="menu_bottomitems">
+            <li><a target="_top" href="/php14ers/peakstatus_main.php">View Peak Condition Reports</a></li>
+            <li><a target="_top" href="/php14ers/peakstatus_add.php">Add a Condition Report</a></li>
+        </ul>
+        </li>
+        <li class="has-sub"><a href="#"><span>Trip Reports</span></a>
+        <ul class="menu_bottomitems">
+            <li><a target="_top" href="/php14ers/tripmain.php">View Trip Reports</a></li>	
+            <li><a target="_top" href="/php14ers/addreport.php">Add a Trip Report</a></li>
+        </ul>
+        </li>
+        <li class="has-sub"><a href="#"><span>Trailheads</span></a>
+        <ul class="menu_bottomitems">
+            <li><a target="_top" href="/php14ers/trailheadsmain.php">View Trailheads</a></li>	
+            <li><a target="_top" href="/php14ers/threportadd.php">Add a Trailhead Status Report</a></li>	
+            <li><a target="_top" href="/php14ers/cellreportmain.php">Update TH Cell Reception</a></li>
+            <li><a target="_top" href="/php14ers/trailheads_bydifficulty.php">14er THs by Road Difficulty</a></li>	
+        </ul>
+        </li>
+        <li class="has-sub"><a href="#"><span>Weather</span></a>
+        <ul class="menu_bottomitems">
+            <li><a target="_top" href="/php14ers/weather.php">Peak Forecasts</a>
+        </ul>
+        </li>
+        <li class="has-sub"><a href="#"><span>Checklists</span></a>
+        <ul class="menu_bottomitems">
+            <li><a target="_top" href="/php14ers/usrpeaksvall.php?peaktype=14ers">14er User Checklists</a></li>
+            <li><a target="_top" href="/php14ers/usrpeaksvall.php?peaktype=13ers">13er User Checklists</a></li>
+            <li><a target="_top" href="/php14ers/usrpeaksstat.php">Checklist Statistics</a></li>
+        </ul>
+        </li>
+        <li class="has-sub"><a href="#"><span>Swap/Shop</span></a>
+        <ul class="menu_bottomitems">
+            <li><a target="_top" href="/php14ers/gearmain.php">Gear Swap</a></li>
+            <li><a target="_top" href="/mobileapp.php">14ers.com Free Mobile App</a></li>
+            <li><a target="_blank" href="http://www.avantlink.com/click.php?tt=ml&ti=3402&pw=55331" rel="noopener">REI.com<img src="/images/icon_globe_medium.png" alt="link" class="picglobe"></a></li>
+            <li><a target="_blank" href="http://www.tkqlhce.com/click-1661703-10281785?url=http://www.backcountry.com" rel="noopener">Backcountry.com<img src="/images/icon_globe_medium.png" alt="link" class="picglobe"></a></li>
+            <li><a target="_blank" href="http://www.steepandcheap.com/?AID=10281785&PID=1661703&SID=undefined" rel="noopener">SteepAndCheap.com<img src="/images/icon_globe_medium.png" alt="link" class="picglobe"></a></li>
+            <li><a target="_blank" href="http://www.avantlink.com/click.php?tt=ml&ti=47621&pw=55331" rel="noopener">SierraTradingPost.com<img src="/images/icon_globe_medium.png" alt="link" class="picglobe"></a></li>
+            <li><a target="_blank" href="http://www.avantlink.com/click.php?tt=ml&ti=160445&pw=55331" rel="noopener">Bent Gate Mountaineering<img src="/images/icon_globe_medium.png" alt="link" class="picglobe"></a></li>
+            <li><a target="_blank" href="https://14ermaps.com" rel="noopener">14erMaps.com<img src="/images/icon_globe_medium.png" alt="link" class="picglobe"></a></li>
+        </ul>
+        </li>
+        <li class="has-sub"><a href="#"><span>Forum</span></a>
+        <ul class="menu_bottomitems">
+            <li><a target="_top" href="/forum/index.php">Forum</a>
+        </ul>
+        </li>
+        <li class="has-sub"><a href="#"><span>More...</span></a>
+        <ul class="menu_bottomitems menu_bottomitems_end">
+            <li><a target="_top" href="/about.php">About 14ers.com</a></li>
+            <li><a target="_top" href="/search.php">Search Site</a></li>
+            <li><a target="_top" href="/links.php">Links</a></li>
+            <li><a target="_top" href="/support.php">Support 14ers.com</a></li>
+            <li><a target="_top" href="/php14ers/emailadmin.php">Contact Site Admin</a></li>
+        </ul>
+        </li>
+    </ul>	
+   </div>
+  </div>
+
+</div>
+
+
+<div id="wrap" style="background:url(/photos/capitolpeak/peakphotos/large/200807_Capi11.jpg?lu=20180305);-webkit-background-size: cover;  -moz-background-size: cover;  -o-background-size: cover;  background-size: cover;background-position:center 52px;background-repeat:no-repeat;background-attachment: fixed;">
+
+<a id="top" name="top" accesskey="t"></a>
+
+
+<script language="javascript">
+	function messageDialog(theTitle,theText) {
+		document.getElementById("dialog_Message").innerHTML = theText;
+		jqy("#dialog_Message" ).dialog({
+			title: theTitle,
+			resizable: false,
+			width: 450,
+			height: 400,
+			modal: true,
+			closeOnEscape: true,
+			buttons: {
+				"OK": function() {
+					jqy( this ).dialog( "close" );
+				}
+			},
+			close: function() {
+				jqy( this ).dialog( "close" );
+			}
+		});
+		jqy("<div></div>").css({overflow:"auto"});
+	}
+</script>
+
+<div id="dialog_Message" class="MainText1" style="display:none;"></div>
+
+<script type="text/javascript" src="/scripts/poptip.js?date=20181102"></script>
+<script type="text/javascript">
+	
+var my_delay = 360000;
+	
+function checkLastTopic(){
+	var cookie_currenttab1 = Get_Cookie('14erscom_hometab1'); 
+	jqy.ajax({
+		url: "/php14ers/ajax_homelasttopic.php?listtype="+cookie_currenttab1,
+		type: "GET",
+		cache: false,
+		success: function(data) {
+			var cookie_topicid = Get_Cookie('14erscom_homelastpostid');
+			if (cookie_topicid != null) {
+				if (cookie_topicid != data) {
+					document.getElementById('topicrefresh_icon').innerHTML = '<span title=\"Refresh\" class=\"fas fa-sync-alt\" style=\"vertical-align:0px;color:red;\"></span>';
+					jqy("#topicrefresh_icon").effect( "pulsate", 50 );
+				}
+			}
+			setTimeout(checkLastTopic, my_delay);
+		},
+		error: function(data){
+			/*alert("Unable to retrieve visitor stats. Please refresh the page or contact the site administrator if this problem persists.");*/
+		}
+	});
+} 
+	
+function updateStats() {
+    jqy.ajax({
+		url: "/php14ers/ajax_visitors.php",
+		type: "GET",
+		cache: false,
+		success: function(data) {
+			document.getElementById('visitors').innerHTML = data;
+           	setTimeout(updateStats, my_delay);
+		},
+		error: function(data){
+			document.getElementById('visitors').innerHTML = 'Unknown';
+		}
+	});  
+}
+	
+function updateAffDivs() {
+     jqy(window).resize(function(){
+		if (jqy(window).width() <= 700){	
+			// do something here
+		}	
+	});
+}
+	
+jqy(document).ready(function() {
+ 	jqy('#tinyTabGroup').tabs();
+ 	var jslisttype=Get_Cookie('14erscom_hometab1');
+	switch (jslisttype) {
+		case 'forum': jqy('#tinyTabGroup').tabs({ active: 3 }); break;
+		case 'trips': jqy('#tinyTabGroup').tabs({ active: 1 }); break;
+		case 'creports': jqy('#tinyTabGroup').tabs({ active: 0 }); break;
+		case 'ths': jqy('#tinyTabGroup').tabs({ active: 2 }); break;
+		default: jqy('#tinyTabGroup').tabs({ active: 0 });
+	}
+	
+	jqy(document).tooltip({
+		items: "[data-tooltip]",
+		position: { my: "left top+2", at: "left bottom", collision: "flipfit" },
+		content: function () {
+			return jqy(this).attr("data-tooltip");
+		}
+	});
+	
+	/* updateStats(); */
+	checkLastTopic();
+	
+});
+
+function peakOptions(divID,peakkey){
+	jqy.ajax({
+		url: "/php14ers/ajax_peakoptions.php?peakkey="+peakkey,
+		type: "GET",
+		success: function(data) {
+			document.getElementById(divID).innerHTML = data;
+		},
+		error: function(data){
+			// alert("Unable to retrieve route data.");
+		}
+	});  
+} 
+
+function changeurl(thelist, theindex) {
+	Set_Cookie('14erscom_hometab1', thelist, 90, '/', '.14ers.com', '');
+}
+
+function refreshurl(torefresh) {
+	jqy('#tinyTabGroup').tabs('load', torefresh);
+}
+
+function refreshurl1() {
+	jqy('#tinyTabGroup').tabs('load', 0);
+}
+
+function refreshurl2() {
+	jqy('#tinyTabGroup').tabs('load', 1);
+}
+
+function refreshurl3() {
+	jqy('#tinyTabGroup').tabs('load', 2);
+}
+
+function refreshurl4() {
+	jqy('#tinyTabGroup').tabs('load', 3);
+}
+
+</script>
+
+
+
+
+<div id="dhtmlpoptip"></div>
+
+<div id="mobileHomeMenu" class="show-7">
+<div class="mobileHomeButton" style="margin-top:15px;"><span class="textContrast2"><a href="/routes.php" class="maintainColor">14er Routes</a></span></div>
+<div class="mobileHomeButton"><span class="textContrast2"><a href="/php14ers/peakstatus_main.php" class="maintainColor">Peak Conditions</a></span></div>
+<div class="mobileHomeButton"><span class="textContrast2"><a href="/php14ers/trailheadsmain.php" class="maintainColor">Trailhead Conditions</a></span></div>
+<div class="mobileHomeButton"><span class="textContrast2"><a href="/php14ers/weather.php" class="maintainColor">Weather</a></span></div></div>
+
+<table id="mainTable" cellspacing=0 cellpadding=0>
+<tr>
+<!-- BEGIN LEFT COLUMN -->
+<td style="text-align:left;vertical-align:top;">
+
+<div id="homecolumn1" class="niceborder home14erlist">
+<table class="data_box4 CopyR1 smallcheck rowhover home14erlist">
+
+<tr>
+<th></th>
+<th colspan="3"><span>Front Range</span></th>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="photos/peakmain.php?peak=Grays+Peak">Grays Peak</a></td>
+<td>14,270'</td>
+<td><div id="d1" class="csspopup-trigger" onclick="peakOptions('d1','110')">&nbsp;</div></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="photos/peakmain.php?peak=Grays+Peak">Torreys Peak</a></td>
+<td>14,267'</td>
+<td><div id="d2" class="csspopup-trigger" onclick="peakOptions('d2','130')">&nbsp;</div></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="photos/peakmain.php?peak=Mt.+Evans">Mt. Evans</a></td>
+<td>14,264'</td>
+<td><div id="d3" class="csspopup-trigger" onclick="peakOptions('d3','160')">&nbsp;</div></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="photos/peakmain.php?peak=Longs+Peak">Longs Peak</a></td>
+<td>14,255'</td>
+<td><div id="d4" class="csspopup-trigger" onclick="peakOptions('d4','200')">&nbsp;</div></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="photos/peakmain.php?peak=Pikes+Peak">Pikes Peak</a></td>
+<td>14,110'</td>
+<td><div id="d5" class="csspopup-trigger" onclick="peakOptions('d5','400')">&nbsp;</div></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="photos/peakmain.php?peak=Mt.+Evans">Mt. Bierstadt</a></td>
+<td>14,060'</td>
+<td><div id="d6" class="csspopup-trigger" onclick="peakOptions('d6','500')">&nbsp;</div></td>
+</tr>
+
+<tr>
+<th></th>
+<th colspan="3"><span>Tenmile Range</span></th>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="photos/peakmain.php?peak=Quandary+Peak">Quandary Peak</a></td>
+<td>14,265'</td>
+<td><div id="d7" class="csspopup-trigger" onclick="peakOptions('d7','140')">&nbsp;</div></td>
+</tr>
+
+<tr>
+<th></th>
+<th colspan="3"><span>Mosquito Range</span></th>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="photos/peakmain.php?peak=Mt.+Lincoln">Mt. Lincoln</a></td>
+<td>14,286'</td>
+<td><div id="d8" class="csspopup-trigger" onclick="peakOptions('d8','100')">&nbsp;</div></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="photos/peakmain.php?peak=Mt.+Lincoln">Mt. Cameron</a></td>
+<td>14,238'</td>
+<td><div id="d9" class="csspopup-trigger" onclick="peakOptions('d9','220')">&nbsp;</div></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="photos/peakmain.php?peak=Mt.+Lincoln">Mt. Bross</a></td>
+<td>14,172'</td>
+<td><div id="d10" class="csspopup-trigger" onclick="peakOptions('d10','290')">&nbsp;</div></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="photos/peakmain.php?peak=Mt.+Lincoln">Mt. Democrat</a></td>
+<td>14,148'</td>
+<td><div id="d11" class="csspopup-trigger" onclick="peakOptions('d11','360')">&nbsp;</div></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="photos/peakmain.php?peak=Mt.+Sherman">Mt. Sherman</a></td>
+<td>14,036'</td>
+<td><div id="d12" class="csspopup-trigger" onclick="peakOptions('d12','600')">&nbsp;</div></td>
+</tr>
+
+<tr>
+<th></th>
+<th colspan="3"><span>Sawatch Range</span></th>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="photos/peakmain.php?peak=Mt.+Elbert">Mt. Elbert</a></td>
+<td>14,433'</td>
+<td><div id="d13" class="csspopup-trigger" onclick="peakOptions('d13','10')">&nbsp;</div></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="photos/peakmain.php?peak=Mt.+Massive">Mt. Massive</a></td>
+<td>14,421'</td>
+<td><div id="d14" class="csspopup-trigger" onclick="peakOptions('d14','20')">&nbsp;</div></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="photos/peakmain.php?peak=Mt.+Harvard">Mt. Harvard</a></td>
+<td>14,420'</td>
+<td><div id="d15" class="csspopup-trigger" onclick="peakOptions('d15','30')">&nbsp;</div></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="photos/peakmain.php?peak=La+Plata+Peak">La Plata Peak</a></td>
+<td>14,336'</td>
+<td><div id="d16" class="csspopup-trigger" onclick="peakOptions('d16','60')">&nbsp;</div></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="photos/peakmain.php?peak=Mt.+Antero">Mt. Antero</a></td>
+<td>14,269'</td>
+<td><div id="d17" class="csspopup-trigger" onclick="peakOptions('d17','120')">&nbsp;</div></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="photos/peakmain.php?peak=Mt.+Shavano">Mt. Shavano</a></td>
+<td>14,229'</td>
+<td><div id="d18" class="csspopup-trigger" onclick="peakOptions('d18','230')">&nbsp;</div></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="photos/peakmain.php?peak=Mt.+Princeton">Mt. Princeton</a></td>
+<td>14,197'</td>
+<td><div id="d19" class="csspopup-trigger" onclick="peakOptions('d19','240')">&nbsp;</div></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="photos/peakmain.php?peak=Mt.+Belford">Mt. Belford</a></td>
+<td>14,197'</td>
+<td><div id="d20" class="csspopup-trigger" onclick="peakOptions('d20','260')">&nbsp;</div></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="photos/peakmain.php?peak=Mt.+Yale">Mt. Yale</a></td>
+<td>14,196'</td>
+<td><div id="d21" class="csspopup-trigger" onclick="peakOptions('d21','270')">&nbsp;</div></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="photos/peakmain.php?peak=Mt.+Shavano">Tabeguache Peak</a></td>
+<td>14,155'</td>
+<td><div id="d22" class="csspopup-trigger" onclick="peakOptions('d22','330')">&nbsp;</div></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="photos/peakmain.php?peak=Mt.+Belford">Mt. Oxford</a></td>
+<td>14,153'</td>
+<td><div id="d23" class="csspopup-trigger" onclick="peakOptions('d23','340')">&nbsp;</div></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="photos/peakmain.php?peak=Mt.+Harvard">Mt. Columbia</a></td>
+<td>14,073'</td>
+<td><div id="d24" class="csspopup-trigger" onclick="peakOptions('d24','470')">&nbsp;</div></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="photos/peakmain.php?peak=Mt.+Belford">Missouri Mountain</a></td>
+<td>14,067'</td>
+<td><div id="d25" class="csspopup-trigger" onclick="peakOptions('d25','480')">&nbsp;</div></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="photos/peakmain.php?peak=Mt.+of+the+Holy+Cross">Mt. of the Holy Cross</a></td>
+<td>14,005'</td>
+<td><div id="d26" class="csspopup-trigger" onclick="peakOptions('d26','710')">&nbsp;</div></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="photos/peakmain.php?peak=Huron+Peak">Huron Peak</a></td>
+<td>14,003'</td>
+<td><div id="d27" class="csspopup-trigger" onclick="peakOptions('d27','720')">&nbsp;</div></td>
+</tr>
+
+<tr>
+<th></th>
+<th colspan="3"><span>Elk Mountains</span></th>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="photos/peakmain.php?peak=Castle+Peak">Castle Peak</a></td>
+<td>14,265'</td>
+<td><div id="d28" class="csspopup-trigger" onclick="peakOptions('d28','150')">&nbsp;</div></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="photos/peakmain.php?peak=Maroon+Peak">Maroon Peak</a></td>
+<td>14,156'</td>
+<td><div id="d29" class="csspopup-trigger" onclick="peakOptions('d29','320')">&nbsp;</div></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="photos/peakmain.php?peak=Capitol+Peak">Capitol Peak</a></td>
+<td>14,130'</td>
+<td><div id="d30" class="csspopup-trigger" onclick="peakOptions('d30','390')">&nbsp;</div></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="photos/peakmain.php?peak=Snowmass+Mountain">Snowmass Mountain</a></td>
+<td>14,092'</td>
+<td><div id="d31" class="csspopup-trigger" onclick="peakOptions('d31','430')">&nbsp;</div></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="photos/peakmain.php?peak=Castle+Peak">Conundrum Peak</a></td>
+<td>14,060'</td>
+<td><div id="d32" class="csspopup-trigger" onclick="peakOptions('d32','510')">&nbsp;</div></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="photos/peakmain.php?peak=Maroon+Peak">Pyramid Peak</a></td>
+<td>14,018'</td>
+<td><div id="d33" class="csspopup-trigger" onclick="peakOptions('d33','660')">&nbsp;</div></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="photos/peakmain.php?peak=Maroon+Peak">North Maroon Peak</a></td>
+<td>14,014'</td>
+<td><div id="d34" class="csspopup-trigger" onclick="peakOptions('d34','700')">&nbsp;</div></td>
+</tr>
+
+<tr>
+<th></th>
+<th colspan="3"><span>San Juan Mountains</span></th>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="photos/peakmain.php?peak=Uncompahgre+Peak">Uncompahgre Peak</a></td>
+<td>14,309'</td>
+<td><div id="d35" class="csspopup-trigger" onclick="peakOptions('d35','70')">&nbsp;</div></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="photos/peakmain.php?peak=Mt.+Wilson">Mt. Wilson</a></td>
+<td>14,246'</td>
+<td><div id="d36" class="csspopup-trigger" onclick="peakOptions('d36','210')">&nbsp;</div></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="photos/peakmain.php?peak=Mt.+Wilson">El Diente Peak</a></td>
+<td>14,159'</td>
+<td><div id="d37" class="csspopup-trigger" onclick="peakOptions('d37','310')">&nbsp;</div></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="photos/peakmain.php?peak=Mt.+Sneffels">Mt. Sneffels</a></td>
+<td>14,150'</td>
+<td><div id="d38" class="csspopup-trigger" onclick="peakOptions('d38','350')">&nbsp;</div></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="photos/peakmain.php?peak=Mt.+Eolus">Windom Peak</a></td>
+<td>14,087'</td>
+<td><div id="d39" class="csspopup-trigger" onclick="peakOptions('d39','450')">&nbsp;</div></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="photos/peakmain.php?peak=Mt.+Eolus">Mt. Eolus</a></td>
+<td>14,083'</td>
+<td><div id="d40" class="csspopup-trigger" onclick="peakOptions('d40','440')">&nbsp;</div></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="photos/peakmain.php?peak=Mt.+Eolus">Sunlight Peak</a></td>
+<td>14,059'</td>
+<td><div id="d41" class="csspopup-trigger" onclick="peakOptions('d41','530')">&nbsp;</div></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="photos/peakmain.php?peak=Handies+Peak">Handies Peak</a></td>
+<td>14,048'</td>
+<td><div id="d42" class="csspopup-trigger" onclick="peakOptions('d42','540')">&nbsp;</div></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="photos/peakmain.php?peak=Mt.+Eolus">North Eolus</a></td>
+<td>14,039'</td>
+<td><div id="d43" class="csspopup-trigger" onclick="peakOptions('d43','580')">&nbsp;</div></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="photos/peakmain.php?peak=Redcloud+Peak">Redcloud Peak</a></td>
+<td>14,034'</td>
+<td><div id="d44" class="csspopup-trigger" onclick="peakOptions('d44','610')">&nbsp;</div></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="photos/peakmain.php?peak=Mt.+Wilson">Wilson Peak</a></td>
+<td>14,017'</td>
+<td><div id="d45" class="csspopup-trigger" onclick="peakOptions('d45','670')">&nbsp;</div></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="photos/peakmain.php?peak=Wetterhorn+Peak">Wetterhorn Peak</a></td>
+<td>14,015'</td>
+<td><div id="d46" class="csspopup-trigger" onclick="peakOptions('d46','680')">&nbsp;</div></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="photos/peakmain.php?peak=San+Luis+Peak">San Luis Peak</a></td>
+<td>14,014'</td>
+<td><div id="d47" class="csspopup-trigger" onclick="peakOptions('d47','690')">&nbsp;</div></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="photos/peakmain.php?peak=Redcloud+Peak">Sunshine Peak</a></td>
+<td>14,001'</td>
+<td><div id="d48" class="csspopup-trigger" onclick="peakOptions('d48','730')">&nbsp;</div></td>
+</tr>
+
+<tr>
+<th></th>
+<th colspan="3"><span>Sangre de Cristo Range</span></th>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="photos/peakmain.php?peak=Blanca+Peak">Blanca Peak</a></td>
+<td>14,345'</td>
+<td><div id="d49" class="csspopup-trigger" onclick="peakOptions('d49','40')">&nbsp;</div></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="photos/peakmain.php?peak=Crestone+Peak">Crestone Peak</a></td>
+<td>14,294'</td>
+<td><div id="d50" class="csspopup-trigger" onclick="peakOptions('d50','90')">&nbsp;</div></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="photos/peakmain.php?peak=Crestone+Peak">Crestone Needle</a></td>
+<td>14,197'</td>
+<td><div id="d51" class="csspopup-trigger" onclick="peakOptions('d51','250')">&nbsp;</div></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="photos/peakmain.php?peak=Kit+Carson+Peak">Kit Carson Peak</a></td>
+<td>14,165'</td>
+<td><div id="d52" class="csspopup-trigger" onclick="peakOptions('d52','300')">&nbsp;</div></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="photos/peakmain.php?peak=Kit+Carson+Peak">Challenger Point</a></td>
+<td>14,081'</td>
+<td><div id="d53" class="csspopup-trigger" onclick="peakOptions('d53','460')">&nbsp;</div></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="photos/peakmain.php?peak=Crestone+Peak">Humboldt Peak</a></td>
+<td>14,064'</td>
+<td><div id="d54" class="csspopup-trigger" onclick="peakOptions('d54','490')">&nbsp;</div></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="photos/peakmain.php?peak=Culebra+Peak">Culebra Peak</a></td>
+<td>14,047'</td>
+<td><div id="d55" class="csspopup-trigger" onclick="peakOptions('d55','550')">&nbsp;</div></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="photos/peakmain.php?peak=Mt.+Lindsey">Mt. Lindsey</a></td>
+<td>14,042'</td>
+<td><div id="d56" class="csspopup-trigger" onclick="peakOptions('d56','570')">&nbsp;</div></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="photos/peakmain.php?peak=Blanca+Peak">Ellingwood Point</a></td>
+<td>14,042'</td>
+<td><div id="d57" class="csspopup-trigger" onclick="peakOptions('d57','560')">&nbsp;</div></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="photos/peakmain.php?peak=Blanca+Peak">Little Bear Peak</a></td>
+<td>14,037'</td>
+<td><div id="d58" class="csspopup-trigger" onclick="peakOptions('d58','590')">&nbsp;</div></td>
+</tr>
+</table>
+</div>
+</td>
+<!-- END LEFT COLUMN -->
+
+
+<!-- BEGIN CENTER COLUMN -->
+<td class="hide-7" style="text-align:center;vertical-align:top;width:100%;">
+<div id="homecolumn2">
+<div style="width:100%;clear:both;padding-top:0px;">
+ <div style="clear:both;text-align:center;margin:4px 3px 0 3px;background-color:rgba(0, 0, 0, 0.2);border-radius:6px;">
+  <div style='color:#FFF;font-size:1.1em;padding:8px 3px 3px 3px;'>Please support 14ers.com!<br>You can help by clicking the links when buying gear from one of these retailers.<br>Thank you, -Bill Middlebrook</div>
+  <a target='_blank' href='https://www.avantlink.com/click.php?tt=ml&ti=3402&pw=55331' rel='noopener'><img class='aflinks af_rei' src='/images/aflogo_spacer.png' alt='link'></a><a target='_blank' href='https://www.avantlink.com/click.php?tt=ml&amp;ti=3480&amp;pw=55331' rel='noopener'><img class='aflinks af_bc' src='/images/aflogo_spacer.png' alt='link'></a><a target='_blank' href='https://www.avantlink.com/click.php?tt=ml&amp;ti=7569&amp;pw=55331' rel='noopener'><img class='aflinks af_sac' src='/images/aflogo_spacer.png' alt='link'></a><a target='_blank' href='https://www.avantlink.com/click.php?tt=ml&amp;ti=47971&amp;pw=55331' rel='noopener'><img class='aflinks af_ems' src='/images/aflogo_spacer.png' alt='link'></a><a target='_blank' href='https://www.avantlink.com/click.php?tt=ml&ti=139409&pw=55331' rel='noopener'><img class='aflinks af_mgr' src='/images/aflogo_spacer.png' alt='link'></a><a target='_blank' href='https://www.avantlink.com/click.php?tt=ml&ti=160445&pw=55331' rel='noopener'><img class='aflinks af_bgt' src='/images/aflogo_spacer.png' alt='link'></a><a target='_blank' href='https://www.avantlink.com/click.php?tt=ml&ti=436962&pw=55331' rel='noopener'><img class='aflinks af_cab' src='/images/aflogo_spacer.png' alt='link'></a>
+  <div style='color:#FFF;font-size:1.1em;padding:5px 3px 5px 3px;'><a href='support.php' class='maintainColor'>More info...</a></div>
+</div>
+
+ </div>
+</div>
+</td>
+<!-- END CENTER COLUMN -->
+
+
+<!-- BEGIN RIGHT COLUMN -->
+<td id="rightColumn" style="vertical-align:top;text-align:right;table-layout:fixed;min-width:300px;">
+<div class="niceborder" style="margin-top:4px;">
+<div id="recentActivityHeader">Recent Activity</div>
+<div id="tinyTabGroup" style="font-size:9pt;">
+<ul id="tabs" style="-moz-border-radius: 0px;-webkit-border-radius:0px;border-radius:0px;">
+	<li><a href="/php14ers/ajax_hometabs1.php?listtype=creports" onclick="changeurl('creports',0)" id="a3"><span><div class="hide-4">Peak Conditions</div><div class="show-4">Conditions</div></span></a></li>
+	<li><a href="/php14ers/ajax_hometabs1.php?listtype=trips" onclick="changeurl('trips',1)" id="a2"><span><div class="hide-3">Trip Reports</div><div class="show-3">TRs</div></span></a></li>
+	<li><a href="/php14ers/ajax_hometabs1.php?listtype=ths" onclick="changeurl('ths',2)" id="a5"><span><div class="hide-3">Trailheads</div><div class="show-3">THs</div></span></a></li>
+	<li><a href="/php14ers/ajax_hometabs1.php?listtype=forum" onclick="changeurl('forum',3)" id="a1"><span>Forum</span></a></li>
+</ul>
+	<div id="content" style="border:0px;height:100%;font-size:9pt;">
+	</div>
+</div>
+</div>
+</td>
+<!-- END RIGHT COLUMN -->
+
+
+</tr>
+</table>
+
+
+<div id="mobileHomeSpace" class="show-6"></div>
+<br>
+<h1 style="color:transparent;opacity:0.0;filter:alpha(opacity=0);-moz-opacity:0.0;">14ers.com - The Home of Colorado's Highest Peaks</h1>
+<div style="display:none"><iframe frameborder="0" style="width:25px;height:0px;border:0px;" src="">cached images</iframe></div>
+<a href="/tripline/"><img src="images/view_spacer.gif" alt=" " style="width:0px;height:0px;"></a>
+
+<div class="hide-7" style="width:100%;padding-top:500px;"><span class="textContrast1"><a href="/photos/peakmain.php?peak=Capitol+Peak" class="maintainColor">Photo: Taken during a climb on Capitol.</a></span></div><br>
+<br>
+<br>
+<div class="push"></div>
+</div>
+
+
+
+ <div style="width:100%;clear:both;"></div>
+<div class="footbar">
+ <div class="sociallinks" style="width:100%;text-align:center;clear:both;"><span class="textContrast1" style="padding:11px 2px 7px 2px;"><a target="_blank" href="https://www.facebook.com/groups/82338447841/" class="maintainColor" title="14ers.com Facebook Group" rel="noopener"><span class="fab fa-facebook-square fa-lg"></span></a></span>&nbsp;&nbsp;<span class="textContrast1" style="padding:11px 2px 7px 2px;"><a target="_blank" href="https://www.instagram.com/14erscom" class="maintainColor" title="14ers.com on Instagram" rel="noopener"><span class="fab fa-instagram fa-lg"></span></a></span>
+ </div>
+<div class="footbar_copy"><a href="/disclaim.php">&copy; 2019 14ers.com<sup>&reg;</sup></a>, 14ers Inc.</div></div>
+
+</body>
+</html>
