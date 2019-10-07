@@ -5,42 +5,60 @@ require "pry"
 class Co14ers::Scraper 
 @@main_webpage = "https://www.14ers.com/"
 @@peaks = []
-  
-  def self.main_page
-    get_main_page = Nokogiri::HTML(open(@@main_webpage)) 
-    data = get_main_page.css("table.data_box4 td a")  
 
+
+  def self.scrape 
     second_page_urls = []
-    
-    data.each do |peak| 
-      @peak_info = {
-        :name => peak.text, 
-        :url_1 => @@main_webpage + peak.attribute("href").value 
-      }
-      @@peaks << @peak_info
-      second_page_urls << @@main_webpage + peak.attribute("href").value 
-    end 
-    second_page_urls
-  end 
-  
-  def self.scrape_second_page
-    console_page_urls = []
-    main_page.each do |site|
-      second_page = Nokogiri::HTML(open(site))
-      url = second_page.css("div.sidebar_content ul.sectionlist li")[8].children
+    get_main_page = Nokogiri::HTML(open(@@main_webpage)) 
+    data = get_main_page.css("table.data_box4 td a") 
+    data.each do |peak|
+      name = peak.text 
+      second_page_urls << second_page_url = @@main_webpage + peak.attribute("href").value
+      second_page_urls.each do |site|
+        second_page = Nokogiri::HTML(open(site))
+        url = second_page.css("div.sidebar_content ul.sectionlist li")[8].children
+        url.each do |console_site|
+          console_url = @@main_webpage + console_site.attribute("href").value
+ 
+          Co14ers::Mountain.new_from_website(name, console_url) 
 
-      url.each do |console_site|
-        @@peaks << @peak_info[:url] = @@main_webpage + console_site.attribute("href").value
-        console_page_urls <<@@main_webpage + console_site.attribute("href").value
+        end 
       end 
     end 
-    console_page_urls
-    binding.pry 
+              binding.pry
   end 
   
+  # def self.main_page
+  #   second_page_urls = []
+  #   get_main_page = Nokogiri::HTML(open(@@main_webpage)) 
+  #   data = get_main_page.css("table.data_box4 td a") 
+    
+  #   data.each do |peak| 
+  #     binding.pry 
+  #     Co14ers::Mountain.new_from_website(peak.text)  
+  #     second_page_urls << @@main_webpage + peak.attribute("href").value 
+  #   end 
+  #   second_page_urls
+  # end 
+  
+  # def self.scrape_second_page
+  #   console_page_urls = []
+  #   main_page.each do |site|
+  #     second_page = Nokogiri::HTML(open(site))
+  #     url = second_page.css("div.sidebar_content ul.sectionlist li")[8].children
+
+  #     url.each do |console_site|
+  #       binding.pry 
+  #       @peak_info[:console_url] = @@main_webpage + console_site.attribute("href").value
+  #       console_page_urls <<@@main_webpage + console_site.attribute("href").value
+  #     end 
+  #   end 
+  #   console_page_urls
+  #   binding.pry 
+  # end 
 
 end 
- Co14ers::Scraper.scrape_second_page
+ Co14ers::Scraper.scrape 
 
 
 

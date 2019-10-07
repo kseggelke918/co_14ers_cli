@@ -1,19 +1,15 @@
 class Co14ers::Mountain
-  attr_accessor :name, :range, :elevation, :elevation_gain, :name_history, :difficulty, :trip_length, :url
+  attr_accessor :name, :url 
   
   @@all = []
   
-  def initialize(name, url, range=nil, elevation=nil, elevation_gain=nil, difficulty=nil, trip_length=nil)
+  def initialize(name, url)
     @name = name
-    @range = range 
-    @elevation_gain = elevation_gain
-    @elevation = elevation
-    @difficulty = difficulty
-    @trip_length = trip_length
+    @url = url 
     save 
   end 
   
-  def self.new_from_website
+  def self.new_from_website(name, url)
     self.new(name, url)
   end 
 
