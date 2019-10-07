@@ -23,33 +23,14 @@ class Co14ers::Mountain
   
   def self.mountain_info(input)
     self.all.each do |peak|
-      if peak.name == input 
+      binding.pry 
+      if peak.name.downcase == input 
         puts "Name: #{peak.name}"
-        puts "URL: #{peak.url}"
+        puts "For more information, please visit #{peak.url}"
+      else 
+        puts "That was an invalid selection, please type the name of the mountain you wish to receive information about."
       end 
     end 
   end 
   
-  def self.ranges
-    # self.all.each_with_index do |peak, index|
-    #   while index <= self.all.length 
-    #     puts "#{index+1}. #{peak.range.capitalize}" 
-    #   end 
-    # end 
-    puts "1. Front Range"  
-    puts "2. Tenmile Range"
-    puts "3. Mosquito Range"
-    puts "4. Sawatch Range"
-    puts "5. Elk Mountains"
-    puts "6. San Juan Mountains"
-    puts "7. Sangre de Cristo Range"  
-  end 
-  
-
-
-#scaper class - grabbing info only and instantiate new mountain objects in the scraper class 
-#mountain class will be a model for what each mountain object will look like 
-
-
-
 end 

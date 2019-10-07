@@ -14,17 +14,12 @@ class Co14ers::CLI
       puts "Thank you, come again!"
     else 
       puts "That was an invalid selection, please type 'list' for a list of Colorado 14ers or 'exit' to exit the program."
-      ranges 
+      mountains  
       end 
   end 
-  
-  def range_list 
-    @mountain_ranges = Co14ers::Mountain.ranges
-  end 
-  
+
   def peak_names
     Co14ers::Scraper.scrape_peak_names
-    
   end 
  
  def mountain_information
@@ -37,7 +32,7 @@ class Co14ers::CLI
   
 end 
  	
-mountain_information 
+ 
 
 
 

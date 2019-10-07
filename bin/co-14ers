@@ -3,4 +3,4 @@
 require './lib/co_14ers'
 
 
-Co14ers::CLI.new.call # To start program
+Co14ers::CLI.new.call 
