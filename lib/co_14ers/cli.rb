@@ -22,6 +22,7 @@ class Co14ers::CLI
     Co14ers::Scraper.scrape_peak_names.each_with_index do |peak, index|
       puts "#{index + 1}. #{peak}"
     end 
+      puts "--------------------------------------------------------------------------------"
   end 
 
   def mountain_information
@@ -52,9 +53,6 @@ class Co14ers::CLI
 
  end 
  
- 
-
-  
 end 
  	
  
