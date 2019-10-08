@@ -7,7 +7,6 @@ module Co14ers
   class Mountain
   attr_accessor :name
 
-  
   @@all = []
   
   def initialize(name, url)
@@ -19,7 +18,6 @@ module Co14ers
   def url 
     second_page = Nokogiri::HTML(open(@url))
     console_url = second_page.css("div.sidebar_content ul.sectionlist li")[8].children
-
     console_url.each do |console_site|
       return console_url = "https://www.14ers.com/" + console_site.attribute("href").value
     end 
@@ -38,15 +36,12 @@ module Co14ers
   end 
   
   def self.mountain_info(input)
-    self.all.find do |peak|
-      peak.name.downcase == input
-        puts "Name: #{peak.name}"
-        puts "For more information, please visit #{peak.url}"
-      # else 
-      #   puts "That was an invalid selection, please type the name of the mountain you wish to receive information about."
-      # end 
-    end 
+      peak = self.all.detect {|p| p.name.downcase == input}  
+        puts "For more information about #{peak.name}, please visit #{peak.url}." 
   end 
+  
+  
+  
 end 
   
 end 
