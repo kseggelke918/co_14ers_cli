@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+To use this gem, run ./bin/co-14ers in the terminal and follow the prompts for further directions on how to receive more information.  If at any time you wish to exit the program, type "exit".
 
 ## Development
 

@@ -1,7 +1,3 @@
-require "bundler/setup"
-require "co_14ers"
-require "pry"
-
 class Co14ers::Scraper 
 @@main_webpage = "https://www.14ers.com/"
 

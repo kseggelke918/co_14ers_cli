@@ -1,8 +1,3 @@
-# delete after testing
-require "nokogiri"
-require "open-uri"
-require "pry"
-
 module Co14ers
   class Mountain
   attr_accessor :name
@@ -36,8 +31,10 @@ module Co14ers
   end 
   
   def self.mountain_info(input)
-      peak = self.all.detect {|p| p.name.downcase == input}  
-        puts "For more information about #{peak.name}, please visit #{peak.url}." 
+    puts "-----------------------------------------------------------------------------"
+    peak = self.all.detect {|p| p.name.downcase == input}  
+      puts "For more information about #{peak.name}, please visit #{peak.url}."
+      puts "-----------------------------------------------------------------------------"
   end 
   
 end 

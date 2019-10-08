@@ -30,7 +30,16 @@ class Co14ers::CLI
     input = gets.chomp.downcase
     found = Co14ers::Scraper.scrape_peak_names.detect {|name| name.downcase == input}
     if found  
-      return Co14ers::Mountain.mountain_info(input) 
+      Co14ers::Mountain.mountain_info(input) 
+      puts "If you would like information on another mountain, please type 'yes'. If you want to view the list of 14ers, please type 'list'."
+      further_info_input = gets.chomp.downcase
+        if further_info_input == "yes"
+          mountain_information
+        elsif further_info_input == "list"
+          mountains
+        else 
+          puts "Thanks!"
+        end 
     elsif input == "exit"
       puts "Thank you, come again!"  
     else 
