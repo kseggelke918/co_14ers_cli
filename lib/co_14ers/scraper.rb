@@ -20,8 +20,8 @@ class Co14ers::Scraper
   def self.scrape_peak_names
     get_main_page = Nokogiri::HTML(open(@@main_webpage))
     peak_names = get_main_page.css("table.data_box4 td a")
-    peak_names.each_with_index do |peak, index|
-      puts "#{index + 1}. #{peak.text}"
+    peak_names.collect do |peak|
+      peak.text
     end 
   end 
  

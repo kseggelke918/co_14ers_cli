@@ -40,8 +40,6 @@ module Co14ers
         puts "For more information about #{peak.name}, please visit #{peak.url}." 
   end 
   
-  
-  
 end 
   
 end 

@@ -14,20 +14,23 @@ class Co14ers::CLI
   end 
 
   def mountains 
-      peak_names
+      print_peak_names
       mountain_information
   end 
 
-  def peak_names
-    Co14ers::Scraper.scrape_peak_names
+  def print_peak_names
+    Co14ers::Scraper.scrape_peak_names.each_with_index do |peak, index|
+      puts "#{index + 1}. #{peak}"
+    end 
   end 
 
   def mountain_information
-    puts "For more information about a mountain, please type the name of that mountain:"
+    puts "For a link to obtain information about a specific mountain, please type the name of that mountain:"
     Co14ers::Scraper.scrape
     input = gets.chomp.downcase
-    if peak_names.text.downcase.include?(input) 
-      Co14ers::Mountain.mountain_info(input) 
+    found = Co14ers::Scraper.scrape_peak_names.detect {|name| name.downcase == input}
+    if found  
+      return Co14ers::Mountain.mountain_info(input) 
     elsif input == "exit"
       puts "Thank you, come again!"  
     else 
@@ -37,6 +40,8 @@ class Co14ers::CLI
 
  end 
  
+ 
+
   
 end 
  	
