@@ -1,7 +1,7 @@
 class Co14ers::CLI
 
   def call 
-    puts "For a list of Colorado 14ers, please type 'list'. To exit, please type 'exit'"
+    puts "For a list of Colorado 14ers, please type 'list'. At an time, type 'exit', to exit the program."
     user_input = gets.chomp.downcase
     if user_input == "exit"
       puts "Thank you, come again!"
@@ -31,20 +31,23 @@ class Co14ers::CLI
     found = Co14ers::Scraper.scrape_peak_names.detect {|name| name.downcase == input}
     if found  
       Co14ers::Mountain.mountain_info(input) 
-      puts "If you would like information on another mountain, please type 'yes'. If you want to view the list of 14ers, please type 'list'."
+      puts "If you'd like information on another mountain, please type 'yes'. If you want to view the list of 14ers, please type 'list'."
       further_info_input = gets.chomp.downcase
         if further_info_input == "yes"
           mountain_information
         elsif further_info_input == "list"
-          mountains
+          mountains 
+        elsif further_info_input == "exit"
+          puts "Thank you!"
         else 
-          puts "Thanks!"
+          puts "That was an invalid response."
+          mountain_information
         end 
     elsif input == "exit"
       puts "Thank you, come again!"  
     else 
       puts "That was an invalid input."
-      mountain_information 
+      mountain_information
     end 
 
  end 
