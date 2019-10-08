@@ -11,6 +11,7 @@ class Co14ers::Scraper
     get_main_page = Nokogiri::HTML(open(@@main_webpage)) 
     data = get_main_page.css("table.data_box4 td a") 
     data.each do |peak|
+      binding.pry if peak.text == nil 
       name = peak.text  
       
       site = @@main_webpage + peak.attribute("href").value

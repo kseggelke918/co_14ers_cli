@@ -26,7 +26,7 @@ class Co14ers::CLI
  def mountain_information
    puts "For more information about a mountain, please type the name of that mountain:"
    Co14ers::Scraper.scrape
-    input = gets.chomp.downcase 
+    input = gets.chomp.downcase
     Co14ers::Mountain.mountain_info(input)
    
  end 

@@ -1,4 +1,10 @@
-class Co14ers::Mountain
+# delete after testing
+require "nokogiri"
+require "open-uri"
+require "pry"
+
+module Co14ers
+  class Mountain
   attr_accessor :name
 
   
@@ -12,10 +18,10 @@ class Co14ers::Mountain
   
   def url 
     second_page = Nokogiri::HTML(open(@url))
-    cosole_url = second_page.css("div.sidebar_content ul.sectionlist li")[8].children
-    binding.pry 
-    cosole_url.each do |console_site|
-      console_url = "https://www.14ers.com/" + console_site.attribute("href").value
+    console_url = second_page.css("div.sidebar_content ul.sectionlist li")[8].children
+
+    console_url.each do |console_site|
+      return console_url = "https://www.14ers.com/" + console_site.attribute("href").value
     end 
   end 
   
@@ -32,20 +38,15 @@ class Co14ers::Mountain
   end 
   
   def self.mountain_info(input)
-          # binding.pry 
-    self.all.each do |peak|
-
-      if peak.name.downcase == input
-        # binding.pry 
+    self.all.find do |peak|
+      peak.name.downcase == input
         puts "Name: #{peak.name}"
         puts "For more information, please visit #{peak.url}"
-      else 
-        puts "That was an invalid selection, please type the name of the mountain you wish to receive information about."
-      end 
+      # else 
+      #   puts "That was an invalid selection, please type the name of the mountain you wish to receive information about."
+      # end 
     end 
   end 
+end 
   
 end 
-
-test = Co14ers::Mountain.new(test, "https://www.14ers.com/photos/peakmain.php?peak=Longs+Peak")
-test.url 
