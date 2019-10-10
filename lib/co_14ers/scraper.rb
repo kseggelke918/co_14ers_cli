@@ -1,7 +1,6 @@
 class Co14ers::Scraper 
 @@main_webpage = "https://www.14ers.com/"
 
-
   def self.scrape 
     second_page_urls = []
     get_main_page = Nokogiri::HTML(open(@@main_webpage)) 
@@ -20,5 +19,4 @@ class Co14ers::Scraper
       peak.text
     end 
   end 
- 
 end 
