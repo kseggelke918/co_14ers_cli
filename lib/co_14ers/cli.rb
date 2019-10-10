@@ -8,7 +8,7 @@ class Co14ers::CLI
     elsif user_input == "list"
       mountains
     else 
-      puts "--------------------------------------------------------------------------------"
+      puts "---------------------------------------------------------------------------------"
       puts "That was an invalid selection."  
       call 
     end 
@@ -23,7 +23,7 @@ class Co14ers::CLI
     Co14ers::Scraper.scrape_peak_names.each_with_index do |peak, index|
       puts "#{index + 1}. #{peak}"
     end 
-      puts "--------------------------------------------------------------------------------"
+      puts "---------------------------------------------------------------------------------"
   end 
 
   def mountain_information
@@ -36,21 +36,21 @@ class Co14ers::CLI
       puts "Would you like information on another mountain? Please type 'yes' or if you want to view the list of 14ers, please type 'list'."
       further_info_input = gets.chomp.downcase
         if further_info_input == "yes"
-          puts "--------------------------------------------------------------------------------"
+          puts "---------------------------------------------------------------------------------"
           mountain_information
         elsif further_info_input == "list"
           mountains 
         elsif further_info_input == "exit"
           puts "Thank you!"
         else 
-          puts "--------------------------------------------------------------------------------"
+          puts "---------------------------------------------------------------------------------"
           puts "That was an invalid response."
           mountain_information
         end 
     elsif input == "exit"
       puts "Thank you, come again!"  
     else 
-      puts "--------------------------------------------------------------------------------"
+      puts "---------------------------------------------------------------------------------"
       puts "That was an invalid input."
       mountain_information
     end 
