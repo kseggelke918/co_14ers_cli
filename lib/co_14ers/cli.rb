@@ -20,7 +20,8 @@ class Co14ers::CLI
   end 
 
   def print_peak_names
-    Co14ers::Scraper.scrape_peak_names.each_with_index do |peak, index|
+    Co14ers::Scraper.first_twenty_five.each_with_index do |peak, index|
+    # Co14ers::Scraper.scrape_peak_names.each_with_index do |peak, index|
       puts "#{index + 1}. #{peak}"
     end 
       puts "---------------------------------------------------------------------------------"

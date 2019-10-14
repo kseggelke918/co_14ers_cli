@@ -19,4 +19,9 @@ class Co14ers::Scraper
       peak.text
     end 
   end 
+
+  def self.first_twenty_five
+    self.scrape_peak_names.first(25)
+  end 
 end 
+
